@@ -1,0 +1,3 @@
+EditorConfig PlugIn for TextMate
+--------------------------------
+

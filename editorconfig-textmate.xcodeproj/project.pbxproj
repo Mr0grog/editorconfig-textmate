@@ -29,6 +29,7 @@
 		CB47C5C015C05ABD00E068C7 /* NSObject+ECSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5BF15C05ABD00E068C7 /* NSObject+ECSwizzle.m */; };
 		CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */; };
 		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
+		CB47C5E815C0876400E068C7 /* LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB47C5E315C0874C00E068C7 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,19 @@
 			remoteInfo = "editorconfig-textmate";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB47C5E715C0875A00E068C7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents;
+			dstSubfolderSpec = 1;
+			files = (
+				CB47C5E815C0876400E068C7 /* LICENSE in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CB47C59815C0538800E068C7 /* editorconfig-textmate.tmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "editorconfig-textmate.tmplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +76,9 @@
 		CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+EditorConfig.m"; sourceTree = "<group>"; };
 		CB47C5C515C05DC900E068C7 /* ECConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECConstants.h; sourceTree = "<group>"; };
 		CB47C5C615C05DCA00E068C7 /* ECConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECConstants.m; sourceTree = "<group>"; };
+		CB47C5DE15C0850A00E068C7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CB47C5E315C0874C00E068C7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CB47C5E415C0874C00E068C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +97,8 @@
 		CB47C58D15C0538700E068C7 = {
 			isa = PBXGroup;
 			children = (
+				CB47C5E315C0874C00E068C7 /* LICENSE */,
+				CB47C5E415C0874C00E068C7 /* README.md */,
 				CB47C5A115C0538800E068C7 /* editorconfig-textmate */,
 				CB47C5AD15C0570C00E068C7 /* lib */,
 				CB47C59A15C0538800E068C7 /* Frameworks */,
@@ -147,6 +166,7 @@
 				CB47C5AF15C0570C00E068C7 /* editorconfig.h */,
 				CB47C5B015C0570C00E068C7 /* editorconfig_handle.h */,
 				CB47C5B115C0570C00E068C7 /* libeditorconfig_static.a */,
+				CB47C5DE15C0850A00E068C7 /* LICENSE */,
 			);
 			path = editorconfig;
 			sourceTree = "<group>";
@@ -185,6 +205,8 @@
 				CB47C59415C0538700E068C7 /* Sources */,
 				CB47C59515C0538700E068C7 /* Frameworks */,
 				CB47C59615C0538700E068C7 /* Resources */,
+				CB47C5E215C0858300E068C7 /* Copy EditorConfig-core License */,
+				CB47C5E715C0875A00E068C7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -246,6 +268,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "echo \"Killing TextMate...\"\nkillall TextMate\n\necho \"Installing PlugIn...\"\ncp -r \"$BUILT_PRODUCTS_DIR/\"*.tmplugin \"$USER_LIBRARY_DIR/Application Support/TextMate/PlugIns/\"";
+		};
+		CB47C5E215C0858300E068C7 /* Copy EditorConfig-core License */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy EditorConfig-core License";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"$SRCROOT/lib/editorconfig/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/LICENSE-editorconfig-core\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
