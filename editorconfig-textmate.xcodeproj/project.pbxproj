@@ -1,0 +1,261 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47C59B15C0538800E068C7 /* Cocoa.framework */; };
+		CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB47C5A415C0538800E068C7 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CB47C59815C0538800E068C7 /* editorconfig-textmate.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "editorconfig-textmate.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB47C59B15C0538800E068C7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CB47C59E15C0538800E068C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		CB47C59F15C0538800E068C7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CB47C5A015C0538800E068C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CB47C5A315C0538800E068C7 /* editorconfig-textmate-Info.plist */ = {isa = PBXFileReference; path = "editorconfig-textmate-Info.plist"; sourceTree = "<group>"; };
+		CB47C5A515C0538800E068C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB47C5A715C0538800E068C7 /* editorconfig-textmate-Prefix.pch */ = {isa = PBXFileReference; path = "editorconfig-textmate-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB47C59515C0538700E068C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB47C58D15C0538700E068C7 = {
+			isa = PBXGroup;
+			children = (
+				CB47C5A115C0538800E068C7 /* editorconfig-textmate */,
+				CB47C59A15C0538800E068C7 /* Frameworks */,
+				CB47C59915C0538800E068C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB47C59915C0538800E068C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C59815C0538800E068C7 /* editorconfig-textmate.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB47C59A15C0538800E068C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C59B15C0538800E068C7 /* Cocoa.framework */,
+				CB47C59D15C0538800E068C7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB47C59D15C0538800E068C7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C59E15C0538800E068C7 /* AppKit.framework */,
+				CB47C59F15C0538800E068C7 /* CoreData.framework */,
+				CB47C5A015C0538800E068C7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		CB47C5A115C0538800E068C7 /* editorconfig-textmate */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C5A215C0538800E068C7 /* Supporting Files */,
+			);
+			path = "editorconfig-textmate";
+			sourceTree = "<group>";
+		};
+		CB47C5A215C0538800E068C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C5A315C0538800E068C7 /* editorconfig-textmate-Info.plist */,
+				CB47C5A415C0538800E068C7 /* InfoPlist.strings */,
+				CB47C5A715C0538800E068C7 /* editorconfig-textmate-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB47C59715C0538700E068C7 /* editorconfig-textmate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB47C5AA15C0538800E068C7 /* Build configuration list for PBXNativeTarget "editorconfig-textmate" */;
+			buildPhases = (
+				CB47C59415C0538700E068C7 /* Sources */,
+				CB47C59515C0538700E068C7 /* Frameworks */,
+				CB47C59615C0538700E068C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "editorconfig-textmate";
+			productName = "editorconfig-textmate";
+			productReference = CB47C59815C0538800E068C7 /* editorconfig-textmate.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB47C58F15C0538700E068C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = CB47C59215C0538700E068C7 /* Build configuration list for PBXProject "editorconfig-textmate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CB47C58D15C0538700E068C7;
+			productRefGroup = CB47C59915C0538800E068C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB47C59715C0538700E068C7 /* editorconfig-textmate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB47C59615C0538700E068C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB47C59415C0538700E068C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CB47C5A415C0538800E068C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB47C5A515C0538800E068C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB47C5A815C0538800E068C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CB47C5A915C0538800E068C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CB47C5AB15C0538800E068C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
+				INFOPLIST_FILE = "editorconfig-textmate/editorconfig-textmate-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		CB47C5AC15C0538800E068C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
+				INFOPLIST_FILE = "editorconfig-textmate/editorconfig-textmate-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB47C59215C0538700E068C7 /* Build configuration list for PBXProject "editorconfig-textmate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB47C5A815C0538800E068C7 /* Debug */,
+				CB47C5A915C0538800E068C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB47C5AA15C0538800E068C7 /* Build configuration list for PBXNativeTarget "editorconfig-textmate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB47C5AB15C0538800E068C7 /* Debug */,
+				CB47C5AC15C0538800E068C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB47C58F15C0538700E068C7 /* Project object */;
+}
