@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		CB47C5D515C07CFB00E068C7 /* Install & Run in TM */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CB47C5D815C07CFC00E068C7 /* Build configuration list for PBXAggregateTarget "Install & Run in TM" */;
+			buildPhases = (
+				CB47C5DC15C07D6B00E068C7 /* ShellScript */,
+			);
+			dependencies = (
+				CB47C5DB15C07D5200E068C7 /* PBXTargetDependency */,
+			);
+			name = "Install & Run in TM";
+			productName = "Install & Run in TM";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47C59B15C0538800E068C7 /* Cocoa.framework */; };
 		CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB47C5A415C0538800E068C7 /* InfoPlist.strings */; };
@@ -15,6 +30,16 @@
 		CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */; };
 		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB47C5DA15C07D5200E068C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB47C58F15C0538700E068C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB47C59715C0538700E068C7;
+			remoteInfo = "editorconfig-textmate";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CB47C59815C0538800E068C7 /* editorconfig-textmate.tmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "editorconfig-textmate.tmplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +217,7 @@
 			projectRoot = "";
 			targets = (
 				CB47C59715C0538700E068C7 /* editorconfig-textmate */,
+				CB47C5D515C07CFB00E068C7 /* Install & Run in TM */,
 			);
 		};
 /* End PBXProject section */
@@ -207,6 +233,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CB47C5DC15C07D6B00E068C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Killing TextMate...\"\nkillall TextMate\n\necho \"Installing PlugIn...\"\ncp -r \"$BUILT_PRODUCTS_DIR/\"*.tmplugin \"$USER_LIBRARY_DIR/Application Support/TextMate/PlugIns/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB47C59415C0538700E068C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -220,6 +262,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB47C5DB15C07D5200E068C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB47C59715C0538700E068C7 /* editorconfig-textmate */;
+			targetProxy = CB47C5DA15C07D5200E068C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB47C5A415C0538800E068C7 /* InfoPlist.strings */ = {
@@ -318,6 +368,20 @@
 			};
 			name = Release;
 		};
+		CB47C5D615C07CFC00E068C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CB47C5D715C07CFC00E068C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,6 +402,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CB47C5D815C07CFC00E068C7 /* Build configuration list for PBXAggregateTarget "Install & Run in TM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB47C5D615C07CFC00E068C7 /* Debug */,
+				CB47C5D715C07CFC00E068C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
