@@ -26,7 +26,7 @@ Installation
 
 You can download a precompiled binary from GitHub's downloads page:
 
-    https://github.com/Mr0grog/editorconfig-textmate/downloads
+https://github.com/Mr0grog/editorconfig-textmate/downloads
 
 Just un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install.
 
