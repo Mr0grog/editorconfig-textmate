@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47C59B15C0538800E068C7 /* Cocoa.framework */; };
 		CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB47C5A415C0538800E068C7 /* InfoPlist.strings */; };
+		CB47C5B215C0570C00E068C7 /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47C5B115C0570C00E068C7 /* libeditorconfig_static.a */; };
+		CB47C5B715C057BE00E068C7 /* EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5B615C057BE00E068C7 /* EditorConfig.m */; };
+		CB47C5C015C05ABD00E068C7 /* NSObject+ECSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5BF15C05ABD00E068C7 /* NSObject+ECSwizzle.m */; };
+		CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */; };
+		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,9 +22,21 @@
 		CB47C59E15C0538800E068C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		CB47C59F15C0538800E068C7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB47C5A015C0538800E068C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CB47C5A315C0538800E068C7 /* editorconfig-textmate-Info.plist */ = {isa = PBXFileReference; path = "editorconfig-textmate-Info.plist"; sourceTree = "<group>"; };
+		CB47C5A315C0538800E068C7 /* editorconfig-textmate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "editorconfig-textmate-Info.plist"; path = "resources/editorconfig-textmate-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CB47C5A515C0538800E068C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB47C5A715C0538800E068C7 /* editorconfig-textmate-Prefix.pch */ = {isa = PBXFileReference; path = "editorconfig-textmate-Prefix.pch"; sourceTree = "<group>"; };
+		CB47C5A715C0538800E068C7 /* editorconfig-textmate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "editorconfig-textmate-Prefix.pch"; path = "resources/editorconfig-textmate-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		CB47C5AF15C0570C00E068C7 /* editorconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig.h; sourceTree = "<group>"; };
+		CB47C5B015C0570C00E068C7 /* editorconfig_handle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig_handle.h; sourceTree = "<group>"; };
+		CB47C5B115C0570C00E068C7 /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libeditorconfig_static.a; sourceTree = "<group>"; };
+		CB47C5B515C057BE00E068C7 /* EditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorConfig.h; sourceTree = "<group>"; };
+		CB47C5B615C057BE00E068C7 /* EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorConfig.m; sourceTree = "<group>"; };
+		CB47C5B915C0584300E068C7 /* TMPlugInController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMPlugInController.h; sourceTree = "<group>"; };
+		CB47C5BE15C05ABD00E068C7 /* NSObject+ECSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ECSwizzle.h"; sourceTree = "<group>"; };
+		CB47C5BF15C05ABD00E068C7 /* NSObject+ECSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ECSwizzle.m"; sourceTree = "<group>"; };
+		CB47C5C115C05BD800E068C7 /* NSWindow+EditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+EditorConfig.h"; sourceTree = "<group>"; };
+		CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+EditorConfig.m"; sourceTree = "<group>"; };
+		CB47C5C515C05DC900E068C7 /* ECConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECConstants.h; sourceTree = "<group>"; };
+		CB47C5C615C05DCA00E068C7 /* ECConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */,
+				CB47C5B215C0570C00E068C7 /* libeditorconfig_static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				CB47C5A115C0538800E068C7 /* editorconfig-textmate */,
+				CB47C5AD15C0570C00E068C7 /* lib */,
 				CB47C59A15C0538800E068C7 /* Frameworks */,
 				CB47C59915C0538800E068C7 /* Products */,
 			);
@@ -73,6 +92,7 @@
 		CB47C5A115C0538800E068C7 /* editorconfig-textmate */ = {
 			isa = PBXGroup;
 			children = (
+				CB47C5B315C057A800E068C7 /* source */,
 				CB47C5A215C0538800E068C7 /* Supporting Files */,
 			);
 			path = "editorconfig-textmate";
@@ -86,6 +106,48 @@
 				CB47C5A715C0538800E068C7 /* editorconfig-textmate-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB47C5AD15C0570C00E068C7 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C5AE15C0570C00E068C7 /* editorconfig */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		CB47C5AE15C0570C00E068C7 /* editorconfig */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C5AF15C0570C00E068C7 /* editorconfig.h */,
+				CB47C5B015C0570C00E068C7 /* editorconfig_handle.h */,
+				CB47C5B115C0570C00E068C7 /* libeditorconfig_static.a */,
+			);
+			path = editorconfig;
+			sourceTree = "<group>";
+		};
+		CB47C5B315C057A800E068C7 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C5B415C057A800E068C7 /* additions */,
+				CB47C5B515C057BE00E068C7 /* EditorConfig.h */,
+				CB47C5B615C057BE00E068C7 /* EditorConfig.m */,
+				CB47C5B915C0584300E068C7 /* TMPlugInController.h */,
+				CB47C5C515C05DC900E068C7 /* ECConstants.h */,
+				CB47C5C615C05DCA00E068C7 /* ECConstants.m */,
+			);
+			path = source;
+			sourceTree = SOURCE_ROOT;
+		};
+		CB47C5B415C057A800E068C7 /* additions */ = {
+			isa = PBXGroup;
+			children = (
+				CB47C5BE15C05ABD00E068C7 /* NSObject+ECSwizzle.h */,
+				CB47C5BF15C05ABD00E068C7 /* NSObject+ECSwizzle.m */,
+				CB47C5C115C05BD800E068C7 /* NSWindow+EditorConfig.h */,
+				CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */,
+			);
+			path = additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +177,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Rob Brackett";
 			};
 			buildConfigurationList = CB47C59215C0538700E068C7 /* Build configuration list for PBXProject "editorconfig-textmate" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -149,6 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB47C5B715C057BE00E068C7 /* EditorConfig.m in Sources */,
+				CB47C5C015C05ABD00E068C7 /* NSObject+ECSwizzle.m in Sources */,
+				CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */,
+				CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +228,8 @@
 				CB47C5A515C0538800E068C7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
+			path = resources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
@@ -218,6 +286,10 @@
 				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
 				INFOPLIST_FILE = "editorconfig-textmate/editorconfig-textmate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/editorconfig\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -230,6 +302,10 @@
 				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
 				INFOPLIST_FILE = "editorconfig-textmate/editorconfig-textmate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/editorconfig\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
