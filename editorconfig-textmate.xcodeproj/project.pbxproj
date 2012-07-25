@@ -22,9 +22,9 @@
 		CB47C59E15C0538800E068C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		CB47C59F15C0538800E068C7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CB47C5A015C0538800E068C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CB47C5A315C0538800E068C7 /* editorconfig-textmate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "editorconfig-textmate-Info.plist"; path = "resources/editorconfig-textmate-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CB47C5A315C0538800E068C7 /* editorconfig-textmate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "editorconfig-textmate-Info.plist"; path = "editorconfig-textmate/editorconfig-textmate-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CB47C5A515C0538800E068C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB47C5A715C0538800E068C7 /* editorconfig-textmate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "editorconfig-textmate-Prefix.pch"; path = "resources/editorconfig-textmate-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		CB47C5A715C0538800E068C7 /* editorconfig-textmate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "editorconfig-textmate-Prefix.pch"; path = "editorconfig-textmate/editorconfig-textmate-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		CB47C5AF15C0570C00E068C7 /* editorconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig.h; sourceTree = "<group>"; };
 		CB47C5B015C0570C00E068C7 /* editorconfig_handle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig_handle.h; sourceTree = "<group>"; };
 		CB47C5B115C0570C00E068C7 /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libeditorconfig_static.a; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				CB47C5A515C0538800E068C7 /* en */,
 			);
 			name = InfoPlist.strings;
-			path = resources;
+			path = "editorconfig-textmate";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
@@ -255,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -275,6 +275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -290,6 +291,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/editorconfig\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -306,6 +308,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/editorconfig\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -330,6 +333,7 @@
 				CB47C5AC15C0538800E068C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
