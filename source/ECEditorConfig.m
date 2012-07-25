@@ -50,7 +50,7 @@
     NSDictionary *info = notification.userInfo;
     DebugLog(@"File changed to: %@\n  in: %@", [info objectForKey:@"fileName"], [notification object]);
     
-    NSDictionary *config = [self configForPath:[info objectForKey:@"filename"]];
+    NSDictionary *config = [self configForPath:[info objectForKey:@"fileName"]];
     [self updateWindow:notification.object withConfig:config];
 }
 
@@ -73,6 +73,8 @@
             }
         }
     }
+    
+    DebugLog(@"Config for %@: %@", filePath, config);
     
     return [[config copy] autorelease];
 }
