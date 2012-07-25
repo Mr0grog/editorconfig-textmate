@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "TMPlugInController.h"
 
-@interface EditorConfig : NSObject
+@interface ECEditorConfig : NSObject
 
 - (id)initWithPlugInController:(id <TMPlugInController>)aController;
 

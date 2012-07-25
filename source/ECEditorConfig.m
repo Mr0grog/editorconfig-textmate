@@ -8,12 +8,11 @@
 
 #import "editorconfig_handle.h"
 #import "editorconfig.h"
-
 #import "ECConstants.h"
 #import "NSWindow+EditorConfig.h"
-#import "EditorConfig.h"
+#import "ECEditorConfig.h"
 
-@interface EditorConfig()
+@interface ECEditorConfig()
 
 - (void)documentDidChange:(NSNotification *)notification;
 
@@ -22,7 +21,7 @@
 @end
 
 
-@implementation EditorConfig
+@implementation ECEditorConfig
 
 #pragma mark Lifecycle
 
