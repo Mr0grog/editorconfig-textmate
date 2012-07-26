@@ -5,7 +5,7 @@ This is a TextMate plug-in that provides support for [Editor Config](http://edit
 
 Download it now at: https://github.com/downloads/Mr0grog/editorconfig-textmate/editorconfig-textmate-0.1.tar.gz
 
-*Note: the plug-in hasn't been tested with TM2.*
+*Note: this plug-in does not support TextMate 2. See below for details.*
 
 
 Feature Support
@@ -38,4 +38,11 @@ Currently, [editorconfig-core](https://github.com/editorconfig/editorconfig-core
 
 Support for `end_of_line` is also needed, but I have to figure out exactly how to do it in TextMate first :P
 
-And, of course, making sure it works in TM2.
+
+TextMate 2
+----------
+
+Unfortunately, this plug-in probably won't be coming to TextMate 2 any time in the near future. There are a few issues: 
+
+- TM2 will only load plug-ins from Macromates (this is easy to work around, but is a clear sign you're doing something not-so-good).
+- As of July 25, 2012, the (soft)tab and tab size settings in TM2 are actually hardcoded. You can modify them, but as soon as you close and re-open the file, you're back to the defaults. It's been this way for 6 months; I'm not sure it's changing any time soon.
