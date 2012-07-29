@@ -15,3 +15,4 @@
 #endif
 
 extern NSString * const kECDocumentDidChange;
+extern NSString * const kECTextViewDidSetDocument;

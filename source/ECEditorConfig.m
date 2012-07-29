@@ -10,11 +10,13 @@
 #import "editorconfig.h"
 #import "ECConstants.h"
 #import "NSWindow+EditorConfig.h"
+#import "NSView+EditorConfig.h"
 #import "ECEditorConfig.h"
 
 @interface ECEditorConfig()
 
-- (void)documentDidChange:(NSNotification *)notification;
+- (void)windowDocumentDidChange:(NSNotification *)notification;
+- (void)textViewDidSetDocument:(NSNotification *)notification;
 
 - (void)updateWindow:(NSWindow *)window withConfig:(NSDictionary *)config;
 
@@ -27,13 +29,26 @@
 
 - (id)initWithPlugInController:(id <TMPlugInController>)aController {
     if(self = [self init]) {
-        [NSWindow ec_init];
         
-        // Notification from our custom NSWindow for when a new document is shown in a window
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(documentDidChange:)
-                                                     name:kECDocumentDidChange
-                                                   object:nil];
+        if (aController.version < 2.0) {
+            // Make the window fire a notification when a new document is shown
+            [NSWindow ec_init];
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(windowDocumentDidChange:)
+                                                         name:kECDocumentDidChange
+                                                       object:nil];
+        }
+        else {
+            // In TM2, actually showing the document may happen much later than on NSWindow -setRepresentedFile:
+            // One example of this is if a window is not frontmost.
+            // Instead, we check the actual text view. This is more of a hack, but seems to be the only reliable way.
+            Class oakTextView = NSClassFromString(@"OakTextView");
+            [oakTextView ec_init];
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(textViewDidSetDocument:)
+                                                         name:kECTextViewDidSetDocument
+                                                       object:nil];
+        }
 	}
 	return self;
 }
@@ -46,12 +61,20 @@
 
 #pragma mark Notifications
 
-- (void)documentDidChange:(NSNotification *)notification {
+- (void)windowDocumentDidChange:(NSNotification *)notification {
     NSDictionary *info = notification.userInfo;
     DebugLog(@"File changed to: %@\n  in: %@", [info objectForKey:@"fileName"], [notification object]);
     
     NSDictionary *config = [self configForPath:[info objectForKey:@"fileName"]];
     [self updateWindow:notification.object withConfig:config];
+}
+
+- (void)textViewDidSetDocument:(NSNotification *)notification {
+    NSDictionary *info = notification.userInfo;
+    DebugLog(@"Text View set to: %@\n  in: %@", [info objectForKey:@"fileName"], [notification object]);
+    
+    NSDictionary *config = [self configForPath:[info objectForKey:@"fileName"]];
+    [self updateWindow:[notification.object window] withConfig:config];
 }
 
 

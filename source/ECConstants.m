@@ -9,3 +9,4 @@
 #import "ECConstants.h"
 
 NSString * const kECDocumentDidChange = @"ECDocumentDidChange";
+NSString * const kECTextViewDidSetDocument = @"ECTextViewDidSetDocument";

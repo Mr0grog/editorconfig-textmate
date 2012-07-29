@@ -30,6 +30,7 @@
 		CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */; };
 		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
 		CB47C5E815C0876400E068C7 /* LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB47C5E315C0874C00E068C7 /* LICENSE */; };
+		CBFF551715C35A8E0075328B /* NSView+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		CB47C5DE15C0850A00E068C7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CB47C5E315C0874C00E068C7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CB47C5E415C0874C00E068C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		CBFF551515C35A8E0075328B /* NSView+EditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+EditorConfig.h"; sourceTree = "<group>"; };
+		CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+EditorConfig.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 				CB47C5BF15C05ABD00E068C7 /* NSObject+ECSwizzle.m */,
 				CB47C5C115C05BD800E068C7 /* NSWindow+EditorConfig.h */,
 				CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */,
+				CBFF551515C35A8E0075328B /* NSView+EditorConfig.h */,
+				CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */,
 			);
 			path = additions;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				CB47C5C015C05ABD00E068C7 /* NSObject+ECSwizzle.m in Sources */,
 				CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */,
 				CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */,
+				CBFF551715C35A8E0075328B /* NSView+EditorConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +452,7 @@
 				CB47C5D715C07CFC00E068C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
