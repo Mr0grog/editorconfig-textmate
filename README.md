@@ -30,6 +30,7 @@ https://github.com/Mr0grog/editorconfig-textmate/downloads
 
 Just un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install.
 
+If TextMate 2 is set as your default TextMate, you may need to manually drag `editorconfig-textmate.tmplugin` into `~/Library/Application Support/TextMate/PlugIns/`.
 
 To-Do
 -----
