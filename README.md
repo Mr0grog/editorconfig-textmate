@@ -24,9 +24,9 @@ The `end_of_line` feature is not yet supported. Neither are upcoming features li
 Installation
 ------------
 
-You can download a precompiled binary from GitHub's downloads page:
+You can download a precompiled binary from:
 
-https://github.com/Mr0grog/editorconfig-textmate/downloads
+http://robbrackett.com/editorconfig-textmate/editorconfig-textmate-0.2.1.tar.gz
 
 Just un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install.
 
