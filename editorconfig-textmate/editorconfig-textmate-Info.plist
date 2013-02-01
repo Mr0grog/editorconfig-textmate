@@ -26,5 +26,7 @@
 	<string>Copyright © 2012 Rob Brackett. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>ECEditorConfig</string>
+	<key>TMPlugInAPIVersion</key>
+	<integer>2</integer>
 </dict>
 </plist>
