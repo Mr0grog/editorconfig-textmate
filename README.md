@@ -1,7 +1,7 @@
 EditorConfig—TextMate PlugIn
 ============================
 
-This is a TextMate plug-in that provides support for [Editor Config](http://editorconfig.org/). It will cause TextMate to set its editing features (e.g. tab style and size) according to a `.editorconfig` file you include alongside your source code.
+This is a TextMate plug-in that provides support for [EditorConfig](http://editorconfig.org/). It will cause TextMate to set its editing features (e.g. tab style and size) according to a `.editorconfig` file you include alongside your source code.
 
 Download it now at: https://github.com/downloads/Mr0grog/editorconfig-textmate/editorconfig-textmate-0.2.tar.gz
 
