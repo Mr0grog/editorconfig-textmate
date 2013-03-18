@@ -19,17 +19,28 @@
 			name = "Install & Run in TM";
 			productName = "Install & Run in TM";
 		};
+		CB60467616F6B558004753CD /* EditorConfig-Core */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CB60467A16F6B558004753CD /* Build configuration list for PBXAggregateTarget "EditorConfig-Core" */;
+			buildPhases = (
+				CB60467916F6B558004753CD /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "EditorConfig-Core";
+			productName = "Install & Run in TM";
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47C59B15C0538800E068C7 /* Cocoa.framework */; };
 		CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB47C5A415C0538800E068C7 /* InfoPlist.strings */; };
-		CB47C5B215C0570C00E068C7 /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47C5B115C0570C00E068C7 /* libeditorconfig_static.a */; };
 		CB47C5B715C057BE00E068C7 /* ECEditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5B615C057BE00E068C7 /* ECEditorConfig.m */; };
 		CB47C5C015C05ABD00E068C7 /* NSObject+ECSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5BF15C05ABD00E068C7 /* NSObject+ECSwizzle.m */; };
 		CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */; };
 		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
 		CB47C5E815C0876400E068C7 /* LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB47C5E315C0874C00E068C7 /* LICENSE */; };
+		CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60468616F6D0EC004753CD /* libeditorconfig_static.a */; };
 		CBFF551715C35A8E0075328B /* NSView+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +51,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CB47C59715C0538700E068C7;
 			remoteInfo = "editorconfig-textmate";
+		};
+		CB60467F16F6BCD7004753CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB47C58F15C0538700E068C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB60467616F6B558004753CD;
+			remoteInfo = "EditorConfig-Core";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -65,9 +83,6 @@
 		CB47C5A315C0538800E068C7 /* editorconfig-textmate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "editorconfig-textmate-Info.plist"; path = "editorconfig-textmate/editorconfig-textmate-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CB47C5A515C0538800E068C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB47C5A715C0538800E068C7 /* editorconfig-textmate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "editorconfig-textmate-Prefix.pch"; path = "editorconfig-textmate/editorconfig-textmate-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		CB47C5AF15C0570C00E068C7 /* editorconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig.h; sourceTree = "<group>"; };
-		CB47C5B015C0570C00E068C7 /* editorconfig_handle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig_handle.h; sourceTree = "<group>"; };
-		CB47C5B115C0570C00E068C7 /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libeditorconfig_static.a; sourceTree = "<group>"; };
 		CB47C5B515C057BE00E068C7 /* ECEditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECEditorConfig.h; sourceTree = "<group>"; };
 		CB47C5B615C057BE00E068C7 /* ECEditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECEditorConfig.m; sourceTree = "<group>"; };
 		CB47C5B915C0584300E068C7 /* TMPlugInController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMPlugInController.h; sourceTree = "<group>"; };
@@ -77,9 +92,11 @@
 		CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+EditorConfig.m"; sourceTree = "<group>"; };
 		CB47C5C515C05DC900E068C7 /* ECConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECConstants.h; sourceTree = "<group>"; };
 		CB47C5C615C05DCA00E068C7 /* ECConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECConstants.m; sourceTree = "<group>"; };
-		CB47C5DE15C0850A00E068C7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CB47C5E315C0874C00E068C7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CB47C5E415C0874C00E068C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		CB60468116F6CAA2004753CD /* editorconfig_handle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig_handle.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig_handle.h"; sourceTree = SOURCE_ROOT; };
+		CB60468216F6CAA2004753CD /* editorconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig.h"; sourceTree = SOURCE_ROOT; };
+		CB60468616F6D0EC004753CD /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditorconfig_static.a; path = editorconfig/libeditorconfig_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFF551515C35A8E0075328B /* NSView+EditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+EditorConfig.h"; sourceTree = "<group>"; };
 		CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+EditorConfig.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */,
-				CB47C5B215C0570C00E068C7 /* libeditorconfig_static.a in Frameworks */,
+				CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +137,7 @@
 		CB47C59A15C0538800E068C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB60468616F6D0EC004753CD /* libeditorconfig_static.a */,
 				CB47C59B15C0538800E068C7 /* Cocoa.framework */,
 				CB47C59D15C0538800E068C7 /* Other Frameworks */,
 			);
@@ -166,10 +184,8 @@
 		CB47C5AE15C0570C00E068C7 /* editorconfig */ = {
 			isa = PBXGroup;
 			children = (
-				CB47C5AF15C0570C00E068C7 /* editorconfig.h */,
-				CB47C5B015C0570C00E068C7 /* editorconfig_handle.h */,
-				CB47C5B115C0570C00E068C7 /* libeditorconfig_static.a */,
-				CB47C5DE15C0850A00E068C7 /* LICENSE */,
+				CB60468116F6CAA2004753CD /* editorconfig_handle.h */,
+				CB60468216F6CAA2004753CD /* editorconfig.h */,
 			);
 			path = editorconfig;
 			sourceTree = "<group>";
@@ -216,6 +232,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CB60468016F6BCD7004753CD /* PBXTargetDependency */,
 			);
 			name = "editorconfig-textmate";
 			productName = "editorconfig-textmate";
@@ -245,6 +262,7 @@
 			targets = (
 				CB47C59715C0538700E068C7 /* editorconfig-textmate */,
 				CB47C5D515C07CFB00E068C7 /* Install & Run in TM */,
+				CB60467616F6B558004753CD /* EditorConfig-Core */,
 			);
 		};
 /* End PBXProject section */
@@ -286,7 +304,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"$SRCROOT/lib/editorconfig/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/LICENSE-editorconfig-core\"";
+			shellScript = "cp \"$SRCROOT/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/LICENSE-editorconfig-core\"";
+		};
+		CB60467916F6B558004753CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/editorconfig/libeditorconfig_static.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$TEMP_FILES_DIR\"\nrm -rf \"coremake\"\nmkdir \"coremake\"\ncd \"coremake\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=i386;x86_64\" \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -310,6 +342,11 @@
 			isa = PBXTargetDependency;
 			target = CB47C59715C0538700E068C7 /* editorconfig-textmate */;
 			targetProxy = CB47C5DA15C07D5200E068C7 /* PBXContainerItemProxy */;
+		};
+		CB60468016F6BCD7004753CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB60467616F6B558004753CD /* EditorConfig-Core */;
+			targetProxy = CB60467F16F6BCD7004753CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -380,11 +417,13 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				INFOPLIST_FILE = "editorconfig-textmate/editorconfig-textmate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/lib/editorconfig\"",
+					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/editorconfig-textmate-adijvhmrqyolxzdejpcjixnqjstl/Build/Products/Debug/editorconfig\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -398,11 +437,13 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				INFOPLIST_FILE = "editorconfig-textmate/editorconfig-textmate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/lib/editorconfig\"",
+					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/editorconfig-textmate-adijvhmrqyolxzdejpcjixnqjstl/Build/Products/Debug/editorconfig\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +454,7 @@
 		CB47C5D615C07CFC00E068C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -420,7 +462,24 @@
 		CB47C5D715C07CFC00E068C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CB60467B16F6B558004753CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "Install & Run in TM copy";
+			};
+			name = Debug;
+		};
+		CB60467C16F6B558004753CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "Install & Run in TM copy";
 			};
 			name = Release;
 		};
@@ -450,6 +509,15 @@
 			buildConfigurations = (
 				CB47C5D615C07CFC00E068C7 /* Debug */,
 				CB47C5D715C07CFC00E068C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB60467A16F6B558004753CD /* Build configuration list for PBXAggregateTarget "EditorConfig-Core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB60467B16F6B558004753CD /* Debug */,
+				CB60467C16F6B558004753CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
