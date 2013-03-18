@@ -1,0 +1,3 @@
+[submodule "lib/editorconfig-core"]
+	path = lib/editorconfig-core
+	url = git@github.com:editorconfig/editorconfig-core.git
