@@ -36,7 +36,14 @@
  *
  * @section usage Usage of the `editorconfig` command line tool
  *
- * Usage: editorconfig <em>[OPTIONS]</em> FILENAME
+ * Usage: editorconfig <em>[OPTIONS]</em> FILEPATH1 [FILEPATH2 FILEPATH3 ...]
+ *
+ * FILEPATH can be a hyphen (-) if you want to path(s) to be read from stdin.
+ * Hyphen can also be specified with other file names. In this way, both file
+ * paths from stdin and the paths specified on the command line will be used.
+ * If more than one path specified on the command line, or the paths are
+ * reading from stdin (even only one path is read from stdin), the output
+ * format would be INI format, instead of the simple "key=value" lines.
  *
  * @htmlonly
  * <table cellpadding="5" cellspacing="5">
@@ -125,14 +132,22 @@
  *   <tr><td><code>?</code></td><td>Matches any single character</td></tr>
  *   <tr><td><code>[seq]</code></td><td>Matches any single character in <i>seq</i></td></tr>
  *   <tr><td><code>[!seq]</code></td><td>Matches any single character not in <i>seq</i></td></tr>
+ *   <tr><td><code>{s1,s2,s3}</code></td><td>Matches any of the strings given (separated by commas)</td></tr>
  * </table>
  * @endhtmlonly
  * @manonly
- * *        Matches any string of characters, except path separators (/)
- * **       Matches any string of characters
- * ?        Matches any single character
- * [seq]    Matches any single character in seq
- * [!seq]   Matches any single character not in seq
+ * *            Matches any string of characters, except path separators (/)
+ *
+ * **           Matches any string of characters
+ *
+ * ?            Matches any single character
+ *
+ * [seq]        Matches any single character in seq
+ *
+ * [!seq]       Matches any single character not in seq
+ *
+ * {s1,s2,s3}   Matches any of the strings given (separated by commas)
+ *
  * @endmanonly
  *
  * The backslash character (\) can be used to escape a character so it is not interpreted as a special character.
@@ -144,14 +159,17 @@
  * Here is the list of all property names understood by EditorConfig and all valid values for these properties:
  *
  * <ul>
- * <li><strong>indent_style</strong>: set to "tab" or "space" to use hard tabs or soft tabs respectively.</li>
- * <li><strong>indent_size</strong>: a whole number defining the number of columns used for each indentation level and the width of soft tabs (when supported). If this equals to "tab", the <strong>indent_size</strong> will be set to the tab size, which should be tab_width if <strong>tab_width</strong> is specified, or the tab size set by editor if <strong>tab_width</strong> is not specified.</li>
- * <li><strong>tab_width</strong>: a whole number defining the number of columns used to represent a tab character.  This defaults to the value of <strong>indent_size</strong> and should not usually need to be specified.</li>
- * <li><strong>end_of_line</strong>: set to "LF", "CR", or "CRLF" to control how line breaks are represented.</li>
- * <li><strong>root</strong>: special property that should be specified at the top of the file outside of any sections.  Set to "true" to stop <code>.editorconfig</code> files search on current file.</li>
+ * <li><strong>indent_style</strong>: set to "tab" or "space" to use hard tabs or soft tabs respectively. The values are case insensitive.</li>
+ * <li><strong>indent_size</strong>: a whole number defining the number of columns used for each indentation level and the width of soft tabs (when supported). If this equals to "tab", the <strong>indent_size</strong> will be set to the tab size, which should be tab_width if <strong>tab_width</strong> is specified, or the tab size set by editor if <strong>tab_width</strong> is not specified. The values are case insensitive.</li>
+ * <li><strong>tab_width</strong>: a whole number defining the number of columns used to represent a tab character. This defaults to the value of <strong>indent_size</strong> and should not usually need to be specified.</li>
+ * <li><strong>end_of_line</strong>: set to "lf", "cr", or "crlf" to control how line breaks are represented. The values are case insensitive.</li>
+ * <li><strong>charset</strong>: set to "latin1", "utf-8", "utf-8-bom", "utf-16be" or "utf-16le" to control the character set. Use of "utf-8-bom" is discouraged.</li>
+ * <li><strong>trim_trailing_whitespace</strong>:  set to "true" to remove any whitespace characters preceeding newline characters and "false" to ensure it doesn't.</li>
+ * <li><strong>insert_final_newline</strong>: set to "true" ensure file ends with a newline when saving and "false" to ensure it doesn't.</li>
+ * <li><strong>root</strong>: special property that should be specified at the top of the file outside of any sections. Set to "true" to stop <code>.editorconfig</code> files search on current file. The value is case insensitive.</li>
  * </ul>
  *
- * Property names are case insensitive and all property names are lowercased when parsing. The values of the indent_style and end_of_line properties are also case insensitive and are lowercased when parsing.
+ * Property names are case insensitive and all property names are lowercased when parsing.
  */
 
 /*!
