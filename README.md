@@ -26,7 +26,7 @@ Installation
 
 You can download a precompiled binary from:
 
-http://robbrackett.com/editorconfig-textmate/editorconfig-textmate-0.2.1.tar.gz
+http://robbrackett.com/editorconfig-textmate/editorconfig-textmate-0.2.2.tar.gz
 
 Just un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install.
 
