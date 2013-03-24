@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Rob Brackett. All rights reserved.
 //
 
-#import "editorconfig_handle.h"
-#import "editorconfig.h"
+#import <editorconfig/editorconfig_handle.h>
+#import <editorconfig/editorconfig.h>
 #import "ECConstants.h"
 #import "NSWindow+EditorConfig.h"
 #import "NSView+EditorConfig.h"
