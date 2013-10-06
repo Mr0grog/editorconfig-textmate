@@ -10,6 +10,6 @@
 
 @protocol TMPlugInController <NSObject>
 
-- (float)version;
+- (CGFloat)version;
 
 @end
