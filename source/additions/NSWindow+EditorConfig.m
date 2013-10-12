@@ -46,19 +46,7 @@
         return [controller performSelector:statusBarSelector];
     }
     
-    // FIXME: with the above, not sure if we need any of this ivar stuff any more. Need to test on TM1.
-    // windowController.documentView is an ivar, so we need to catch for NSUndefinedKeyException
-    @try {
-        return [self valueForKeyPath:@"contentView.documentView.statusBar"];
-    }
-    @catch (NSException *exception) {
-        @try {
-            return [self valueForKeyPath:@"windowController.documentView.statusBar"];
-        }
-        @catch (NSException *exception) {
-            return nil;
-        }
-    }
+    return nil;
 }
 
 - (NSView *)ec_textView {
