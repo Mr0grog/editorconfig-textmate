@@ -29,6 +29,7 @@
 
 - (id)initWithPlugInController:(id <TMPlugInController>)aController {
     if(self = [self init]) {
+        DebugLog(@"Initializing EditorConfig-TextMate for TextMate %f.", aController.version);
         
         if (aController.version < 2.0) {
             // Make the window fire a notification when a new document is shown
