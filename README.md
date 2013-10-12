@@ -5,7 +5,7 @@ This is a TextMate plug-in that provides support for [EditorConfig](http://edito
 
 Download it now at: http://robbrackett.com/editorconfig-textmate/editorconfig-textmate-0.2.2.tar.gz
 
-Works in both TextMate and TextMate 2 Alpha (as of build 9359).
+Works in both TextMate and TextMate 2 Alpha (as of build 9487, October 8th, 2013).
 
 
 Feature Support
