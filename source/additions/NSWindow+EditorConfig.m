@@ -35,37 +35,33 @@
 }
 
 - (NSView *)ec_statusBar {
-    // windowController.documentView is an ivar, so we need to catch for NSUndefinedKeyException
-    @try {
-        return [self valueForKeyPath:@"contentView.documentView.statusBar"];
+    SEL statusBarSelector = @selector(statusBar);
+    id controller = self.windowController;
+    
+    if (controller == nil) {
+        controller = self.delegate;
     }
-    @catch (NSException *exception) {
-        @try {
-            return [self valueForKeyPath:@"windowController.documentView.statusBar"];
-        }
-        @catch (NSException *exception) {
-            return nil;
-        }
+    
+    if (controller && [controller respondsToSelector:statusBarSelector]) {
+        return [controller performSelector:statusBarSelector];
     }
+    
+    return nil;
 }
 
 - (NSView *)ec_textView {
     SEL textViewSelector = @selector(textView);
-    NSWindowController *controller = self.windowController;
+    id controller = self.windowController;
     
-    // in TM1, we can get to the text view pretty easily from the window controller
+    if (controller == nil) {
+        controller = self.delegate;
+    }
+    
     if (controller && [controller respondsToSelector:textViewSelector]) {
         return [controller performSelector:textViewSelector];
     }
-    // in TM2, it's on the documentView, which is only an ivar on the window controller
-    else {
-        @try {
-            return [self valueForKeyPath:@"contentView.documentView.textView"];
-        }
-        @catch (NSException *exception) {
-            return nil;
-        }
-    }
+    
+    return nil;
 }
 
 - (BOOL)ec_setSoftTabs:(BOOL)softTabs {
