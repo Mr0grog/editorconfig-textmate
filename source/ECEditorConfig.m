@@ -96,6 +96,7 @@
                 [config setValue:[NSString stringWithUTF8String:value] forKey:[NSString stringWithUTF8String:name]];
             }
         }
+        editorconfig_handle_destroy(handle);
     }
     
     DebugLog(@"Config for %@: %@", filePath, config);
