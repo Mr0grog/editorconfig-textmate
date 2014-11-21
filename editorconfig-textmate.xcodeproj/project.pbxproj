@@ -33,6 +33,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		CB14B82E1A1FDE020055DD5E /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB14B82D1A1FDE020055DD5E /* libpcre.a */; };
 		CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47C59B15C0538800E068C7 /* Cocoa.framework */; };
 		CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB47C5A415C0538800E068C7 /* InfoPlist.strings */; };
 		CB47C5B715C057BE00E068C7 /* ECEditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5B615C057BE00E068C7 /* ECEditorConfig.m */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB14B82D1A1FDE020055DD5E /* libpcre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpcre.a; path = lib/libpcre.a; sourceTree = "<group>"; };
 		CB47C59815C0538800E068C7 /* editorconfig-textmate.tmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "editorconfig-textmate.tmplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB47C59B15C0538800E068C7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CB47C59E15C0538800E068C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -107,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */,
+				CB14B82E1A1FDE020055DD5E /* libpcre.a in Frameworks */,
 				CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +140,7 @@
 		CB47C59A15C0538800E068C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB14B82D1A1FDE020055DD5E /* libpcre.a */,
 				CB60468616F6D0EC004753CD /* libeditorconfig_static.a */,
 				CB47C59B15C0538800E068C7 /* Cocoa.framework */,
 				CB47C59D15C0538800E068C7 /* Other Frameworks */,
@@ -318,7 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$TEMP_FILES_DIR\"\nrm -rf \"coremake\"\nmkdir \"coremake\"\ncd \"coremake\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=i386;x86_64\" \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
+			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$TEMP_FILES_DIR\"\nrm -rf \"coremake\"\nmkdir \"coremake\"\ncd \"coremake\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=i386;x86_64\" -DPCRE_LIBRARY=$PROJECT_DIR/lib/libpcre.a -DPCRE_STATIC=ON \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -424,6 +428,7 @@
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/editorconfig-textmate-adijvhmrqyolxzdejpcjixnqjstl/Build/Products/Debug/editorconfig\"",
+					"$(PROJECT_DIR)/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +449,7 @@
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/editorconfig-textmate-adijvhmrqyolxzdejpcjixnqjstl/Build/Products/Debug/editorconfig\"",
+					"$(PROJECT_DIR)/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
