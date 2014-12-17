@@ -76,7 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CB14B82D1A1FDE020055DD5E /* libpcre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpcre.a; path = lib/libpcre.a; sourceTree = "<group>"; };
+		CB14B82D1A1FDE020055DD5E /* libpcre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpcre.a; path = lib/pcre/libpcre.a; sourceTree = "<group>"; };
 		CB47C59815C0538800E068C7 /* editorconfig-textmate.tmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "editorconfig-textmate.tmplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB47C59B15C0538800E068C7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CB47C59E15C0538800E068C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -322,7 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$TEMP_FILES_DIR\"\nrm -rf \"coremake\"\nmkdir \"coremake\"\ncd \"coremake\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=i386;x86_64\" -DPCRE_LIBRARY=$PROJECT_DIR/lib/libpcre.a -DPCRE_STATIC=ON \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
+			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$TEMP_FILES_DIR\"\nrm -rf \"coremake\"\nmkdir \"coremake\"\ncd \"coremake\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=i386;x86_64\" -DPCRE_LIBRARY=$PROJECT_DIR/lib/pcre/libpcre.a -DPCRE_INCLUDE_DIR=$PROJECT_DIR/lib/pcre/include/ -DPCRE_STATIC=ON \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
