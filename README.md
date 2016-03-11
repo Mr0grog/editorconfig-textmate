@@ -3,7 +3,7 @@ EditorConfig—TextMate PlugIn
 
 This is a TextMate plug-in that provides support for [EditorConfig](http://editorconfig.org/). It will cause TextMate to set its editing features (e.g. tab style and size) according to a `.editorconfig` file you include alongside your source code.
 
-Download it now at: https://github.com/Mr0grog/editorconfig-textmate/releases/download/v0.2.3/editorconfig-textmate-0.2.3.tar.gz
+Download it now at: https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
 Works in both TextMate and TextMate 2 Alpha (as of build 9487, October 8th, 2013).
 
@@ -26,7 +26,7 @@ Installation
 
 You can download a precompiled binary from:
 
-https://github.com/Mr0grog/editorconfig-textmate/releases/download/v0.2.3/editorconfig-textmate-0.2.3.tar.gz
+https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
 Just un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install.
 
