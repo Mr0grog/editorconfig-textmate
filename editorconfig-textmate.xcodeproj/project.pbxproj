@@ -427,7 +427,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
-					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/editorconfig-textmate-adijvhmrqyolxzdejpcjixnqjstl/Build/Products/Debug/editorconfig\"",
 					"$(PROJECT_DIR)/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
@@ -448,7 +447,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
-					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/editorconfig-textmate-adijvhmrqyolxzdejpcjixnqjstl/Build/Products/Debug/editorconfig\"",
 					"$(PROJECT_DIR)/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
