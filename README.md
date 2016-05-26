@@ -44,3 +44,9 @@ TextMate 2
 ----------
 
 While this plug-in does support the TextMate 2 Alpha, please keep in mind that alpha software is subject to great change. It could break in future releases of TextMate. If this happens, please file an issue: https://github.com/Mr0grog/editorconfig-textmate/issues
+
+
+License
+-------
+
+This plug-in is open source. It is copyright (c) 2012-2016 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.
