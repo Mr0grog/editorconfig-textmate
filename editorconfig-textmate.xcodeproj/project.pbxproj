@@ -230,7 +230,7 @@
 				CB47C59415C0538700E068C7 /* Sources */,
 				CB47C59515C0538700E068C7 /* Frameworks */,
 				CB47C59615C0538700E068C7 /* Resources */,
-				CB47C5E215C0858300E068C7 /* Copy EditorConfig-core License */,
+				CB47C5E215C0858300E068C7 /* Copy Library Licenses */,
 				CB47C5E715C0875A00E068C7 /* CopyFiles */,
 			);
 			buildRules = (
@@ -296,19 +296,19 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"Killing TextMate...\"\nkillall TextMate\n\necho \"Installing PlugIn...\"\ncp -r \"$BUILT_PRODUCTS_DIR/\"*.tmplugin \"$USER_LIBRARY_DIR/Application Support/TextMate/PlugIns/\"";
 		};
-		CB47C5E215C0858300E068C7 /* Copy EditorConfig-core License */ = {
+		CB47C5E215C0858300E068C7 /* Copy Library Licenses */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy EditorConfig-core License";
+			name = "Copy Library Licenses";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"$SRCROOT/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/LICENSE-editorconfig-core\"";
+			shellScript = "cp \"$SRCROOT/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/LICENSE-editorconfig-core\"\ncp \"$SRCROOT/lib/pcre/LICENCE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/LICENSE-pcre\"\n";
 		};
 		CB60467916F6B558004753CD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -427,7 +427,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
-					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/editorconfig-textmate-adijvhmrqyolxzdejpcjixnqjstl/Build/Products/Debug/editorconfig\"",
 					"$(PROJECT_DIR)/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
@@ -448,7 +447,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
-					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/editorconfig-textmate-adijvhmrqyolxzdejpcjixnqjstl/Build/Products/Debug/editorconfig\"",
 					"$(PROJECT_DIR)/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;

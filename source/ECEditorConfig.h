@@ -2,8 +2,9 @@
 //  EditorConfig.h
 //  editorconfig-textmate
 //
-//  Created by Rob Brackett on 7/25/12.
-//  Copyright (c) 2012 Rob Brackett. All rights reserved.
+//  Copyright (c) 2012-2016 Rob Brackett.
+//  This is open source software, released under the MIT license;
+//  see the file LICENSE for details.
 //
 
 #import <Cocoa/Cocoa.h>

@@ -2,8 +2,9 @@
 //  EditorConfig.m
 //  editorconfig-textmate
 //
-//  Created by Rob Brackett on 7/25/12.
-//  Copyright (c) 2012 Rob Brackett. All rights reserved.
+//  Copyright (c) 2012-2016 Rob Brackett.
+//  This is open source software, released under the MIT license;
+//  see the file LICENSE for details.
 //
 
 #import <editorconfig/editorconfig_handle.h>
@@ -19,6 +20,7 @@
 - (void)textViewDidSetDocument:(NSNotification *)notification;
 
 - (void)updateWindow:(NSWindow *)window withConfig:(NSDictionary *)config;
+- (NSString *)editorConfigCoreVersion;
 
 @end
 
@@ -29,7 +31,9 @@
 
 - (id)initWithPlugInController:(id <TMPlugInController>)aController {
     if(self = [self init]) {
-        DebugLog(@"Initializing EditorConfig-TextMate for TextMate %f.", aController.version);
+        DebugLog(@"Initializing EditorConfig-TextMate for TextMate %f with EditorConfig-Core %@.",
+                 aController.version,
+                 [self editorConfigCoreVersion]);
         
         if (aController.version < 2.0) {
             // Make the window fire a notification when a new document is shown
@@ -122,6 +126,15 @@
     }
     
     // TODO: end_of_line support
+}
+
+- (NSString *)editorConfigCoreVersion {
+    int ec_version_major, ec_version_minor, ec_version_patch;
+    editorconfig_get_version(&ec_version_major,
+                             &ec_version_minor,
+                             &ec_version_patch);
+    return [NSString stringWithFormat:@"%d.%d.%d",
+            ec_version_major, ec_version_minor, ec_version_patch];
 }
 
 @end
