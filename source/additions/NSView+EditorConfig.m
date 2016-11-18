@@ -20,11 +20,14 @@
 - (void)ec_setDocument:(id)document {
     [self ec_setDocument:document];
     
-    NSString *fileName = self.window.representedFilename;
+    NSString *fileName = [document valueForKey:@"path"];
     if (fileName == nil) {
-        fileName = [self.window.windowController representedFilename];
+        fileName = self.window.representedFilename;
         if (fileName == nil) {
-            fileName = @"";
+            fileName = [self.window.windowController representedFilename];
+            if (fileName == nil) {
+                fileName = @"";
+            }
         }
     }
     
