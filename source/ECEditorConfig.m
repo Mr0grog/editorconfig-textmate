@@ -127,7 +127,7 @@
     
     NSString *max_line_length = [config objectForKey:@"max_line_length"];
     if (max_line_length) {
-        [window ec_setWrapColumn:max_line_length.integerValue];
+        [window ec_setWrapColumn:max_line_length.intValue];
     }
     
     // TODO: end_of_line support
