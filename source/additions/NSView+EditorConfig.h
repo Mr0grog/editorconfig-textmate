@@ -14,5 +14,6 @@
 + (void)ec_init;
 
 - (void)ec_setDocument:(id)document;
+- (void)ec_documentWillSave:(NSNotification*)aNotification;
 
 @end

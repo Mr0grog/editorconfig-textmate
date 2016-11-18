@@ -18,6 +18,8 @@
 // sends a kECDocumentDidChange notification
 - (void)ec_setRepresentedFilename:(NSString *)fileName;
 
+- (void)ec_setSettings:(NSDictionary *)settings forPath:(NSString *)path;
+
 - (BOOL)ec_setSoftTabs:(BOOL)softTabs;
 - (BOOL)ec_setTabSize:(int)tabSize;
 

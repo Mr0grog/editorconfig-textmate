@@ -7,6 +7,7 @@
 //
 
 #import "ECConstants.h"
+#import "NSObject+ECDocument.h"
 #import "NSObject+ECSwizzle.h"
 #import "NSWindow+EditorConfig.h"
 
@@ -16,6 +17,9 @@
     [self ec_swizzleMethod:@selector(setRepresentedFilename:)
                 withMethod:@selector(ec_setRepresentedFilename:)];
 }
+
+
+#pragma mark - Swizzles/Overrides
 
 - (void)ec_setRepresentedFilename:(NSString *)fileName {
     BOOL shouldNotify = NO;
@@ -33,6 +37,9 @@
                                                           userInfo:info];
     }
 }
+
+
+#pragma mark - View Getters
 
 - (NSView *)ec_statusBar {
     SEL statusBarSelector = @selector(statusBar);
@@ -62,6 +69,17 @@
     }
     
     return nil;
+}
+
+
+#pragma mark - Commands
+
+- (void)ec_setSettings:(NSDictionary *)settings forPath:(NSString *)path {
+    NSView *textView = self.ec_textView;
+    NSObject *document = [textView performSelector:@selector(document)];
+    if (document && (!path || [path isEqualToString:[document valueForKey:@"path"]])) {
+        document.ec_settings = settings;
+    }
 }
 
 - (BOOL)ec_setSoftTabs:(BOOL)softTabs {

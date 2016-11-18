@@ -7,6 +7,7 @@
 //
 
 #import "ECConstants.h"
+#import "NSObject+ECDocument.h"
 #import "NSObject+ECSwizzle.h"
 #import "NSView+EditorConfig.h"
 
@@ -15,7 +16,12 @@
 + (void)ec_init {
     [self ec_swizzleMethod:@selector(setDocument:)
                 withMethod:@selector(ec_setDocument:)];
+    [self ec_swizzleMethod:@selector(documentWillSave:)
+                withMethod:@selector(ec_documentWillSave:)];
 }
+
+
+#pragma mark - Swizzles/Overrides
 
 - (void)ec_setDocument:(id)document {
     [self ec_setDocument:document];
@@ -35,6 +41,44 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kECTextViewDidSetDocument
                                                         object:self
                                                       userInfo:info];
+}
+
+- (void)ec_documentWillSave:(NSNotification*)aNotification {
+    [self ec_applySettingsToDocument:aNotification.object];
+    [self ec_documentWillSave:aNotification];
+}
+
+
+#pragma mark - Private
+
+- (void)ec_applySettingsToDocument:(NSObject *)document {
+    NSDictionary *settings = document.ec_settings;
+    BOOL insertFinalNewline = [[settings objectForKey:@"insert_final_newline"] isEqualToString:@"true"];
+    BOOL trimTrailingWhitespace = [[settings objectForKey:@"trim_trailing_whitespace"] isEqualToString:@"true"];
+    
+    if (!(insertFinalNewline || trimTrailingWhitespace)) {
+        return;
+    }
+    
+    BOOL didChangeContent = NO;
+    NSString *content = [document performSelector:@selector(content)];
+    NSString *lineTerminator = [document performSelector:@selector(diskNewlines)];
+    if (!lineTerminator) {
+        lineTerminator = @"\n";
+    }
+    
+    if (insertFinalNewline && ![content hasSuffix:lineTerminator]) {
+        content = [content stringByAppendingString:lineTerminator];
+        didChangeContent = YES;
+    }
+    
+    if (trimTrailingWhitespace) {
+        // TODO: implement trim_trailing_whitespace
+    }
+    
+    if (didChangeContent) {
+        [document performSelector:@selector(setContent:) withObject:content];
+    }
 }
 
 @end

@@ -42,6 +42,7 @@
 		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
 		CB47C5E815C0876400E068C7 /* LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB47C5E315C0874C00E068C7 /* LICENSE */; };
 		CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60468616F6D0EC004753CD /* libeditorconfig_static.a */; };
+		CB993E4F1DDF797500D3050B /* NSObject+ECDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */; };
 		CBFF551715C35A8E0075328B /* NSView+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,8 @@
 		CB60468116F6CAA2004753CD /* editorconfig_handle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig_handle.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig_handle.h"; sourceTree = SOURCE_ROOT; };
 		CB60468216F6CAA2004753CD /* editorconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig.h"; sourceTree = SOURCE_ROOT; };
 		CB60468616F6D0EC004753CD /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditorconfig_static.a; path = editorconfig/libeditorconfig_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB993E4D1DDF797500D3050B /* NSObject+ECDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ECDocument.h"; sourceTree = "<group>"; };
+		CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ECDocument.m"; sourceTree = "<group>"; };
 		CBFF551515C35A8E0075328B /* NSView+EditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+EditorConfig.h"; sourceTree = "<group>"; };
 		CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+EditorConfig.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +219,8 @@
 				CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */,
 				CBFF551515C35A8E0075328B /* NSView+EditorConfig.h */,
 				CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */,
+				CB993E4D1DDF797500D3050B /* NSObject+ECDocument.h */,
+				CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */,
 			);
 			path = additions;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB993E4F1DDF797500D3050B /* NSObject+ECDocument.m in Sources */,
 				CB47C5B715C057BE00E068C7 /* ECEditorConfig.m in Sources */,
 				CB47C5C015C05ABD00E068C7 /* NSObject+ECSwizzle.m in Sources */,
 				CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */,
