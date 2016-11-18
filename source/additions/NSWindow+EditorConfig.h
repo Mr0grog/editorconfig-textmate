@@ -20,5 +20,6 @@
 
 - (BOOL)ec_setSoftTabs:(BOOL)softTabs;
 - (BOOL)ec_setTabSize:(int)tabSize;
+- (BOOL)ec_setWrapColumn:(int)wrapColumn;
 
 @end

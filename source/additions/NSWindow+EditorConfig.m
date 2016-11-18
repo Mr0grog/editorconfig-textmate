@@ -117,4 +117,22 @@
     return success;
 }
 
+- (BOOL)ec_setWrapColumn:(int)wrapColumn {
+    if (wrapColumn == 0) {
+        return NO;
+    }
+    
+    NSView *textView = self.ec_textView;
+    SEL wrapColumnSelector = @selector(setWrapColumn:);
+    
+    if ([textView respondsToSelector:wrapColumnSelector]) {
+        IMP setter = [textView methodForSelector:wrapColumnSelector];
+        setter(textView, wrapColumnSelector, wrapColumn);
+        DebugLog(@"(text view) Setting wrap column: %ld", (long)wrapColumn);
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end
