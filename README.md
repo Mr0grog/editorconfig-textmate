@@ -20,7 +20,7 @@ The following Editor Config features are supported:
 - insert_final_newline (newline is added when saving a document)
 - trim_trailing_whitespace (whitespace is trimmed when saving a document)
 
-The `end_of_line` and `charset` features are not yet supported (see #23 for tracking).
+The `end_of_line` and `charset` features are not yet supported (see #23 for updates).
 
 
 Installation
