@@ -62,6 +62,8 @@
     }
     
     BOOL didChangeContent = NO;
+    BOOL didUpdateSelection = NO;
+    NSMutableArray<NSValue *> *selections;
     NSString *content = [document performSelector:@selector(content)];
     NSString *lineTerminator = [document performSelector:@selector(diskNewlines)];
     if (!lineTerminator) {
@@ -73,12 +75,81 @@
         didChangeContent = YES;
     }
     
+    // TODO: find a reasonable way to encapsulate all the logic here.
     if (trimTrailingWhitespace) {
-        // TODO: implement trim_trailing_whitespace
+        NSMutableString *newContent = [NSMutableString string];
+        // Selections are an NSArray of NSValues boxing NSRanges
+        // FIXME: this approach collapses column selections into a single contiguous range. Not sure on a better approach for now.
+        // http://lists.macromates.com/textmate/2017-January/040185.html
+        selections = [self accessibilityAttributeValue:NSAccessibilitySelectedTextRangesAttribute];
+        
+        NSCharacterSet *whitespace = [NSCharacterSet whitespaceCharacterSet];
+        NSCharacterSet *newline = [NSCharacterSet newlineCharacterSet];
+        NSScanner *scanner = [NSScanner scannerWithString:content];
+        // By default scanners skip newlines and whitespace -- exactly what we're scaning for :P
+        scanner.charactersToBeSkipped = nil;
+        
+        NSString *line;
+        NSUInteger currentIndex = 0;
+        while (!scanner.isAtEnd) {
+            if ([scanner scanUpToCharactersFromSet:newline intoString:&line]) {
+                NSUInteger i = 0;
+                for (i = line.length; i > 0; i--) {
+                    if (![whitespace characterIsMember:[line characterAtIndex:i - 1]]) {
+                        break;
+                    }
+                }
+                
+                [newContent appendString:[line substringToIndex:i]];
+                
+                NSUInteger removedOnThisLine = line.length - i;
+                currentIndex += i;
+                
+                if (removedOnThisLine > 0) {
+                    didChangeContent = YES;
+                    
+                    for (NSUInteger selectionIndex = 0; selectionIndex < selections.count; selectionIndex++) {
+                        NSRange selection = [[selections objectAtIndex:selectionIndex] rangeValue];
+                        NSUInteger selectionEnd = NSMaxRange(selection);
+                        if (selectionEnd > currentIndex) {
+                            NSUInteger newLocation = selection.location;
+                            
+                            if (selection.location >= currentIndex + removedOnThisLine) {
+                                newLocation -= removedOnThisLine;
+                            }
+                            else if (selection.location > currentIndex) {
+                                newLocation = currentIndex;
+                            }
+                            
+                            if (selectionEnd >= currentIndex + removedOnThisLine) {
+                                selectionEnd -= removedOnThisLine;
+                            }
+                            else {
+                                selectionEnd = currentIndex;
+                            }
+                            
+                            selection = NSMakeRange(newLocation, selectionEnd - newLocation);
+                            [selections replaceObjectAtIndex:selectionIndex withObject:[NSValue valueWithRange:selection]];
+                            didUpdateSelection = YES;
+                        }
+                    }
+                }
+            }
+            
+            if ([scanner scanCharactersFromSet:newline intoString:&line]) {
+                [newContent appendString:line];
+                currentIndex += line.length;
+            }
+        }
+        
+        content = newContent;
     }
     
     if (didChangeContent) {
         [document performSelector:@selector(setContent:) withObject:content];
+    }
+    if (didUpdateSelection) {
+        [self accessibilitySetValue:selections forAttribute:NSAccessibilitySelectedTextRangesAttribute];
     }
 }
 
