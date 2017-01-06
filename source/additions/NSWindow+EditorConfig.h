@@ -2,8 +2,9 @@
 //  NSWindow+EditorConfig.h
 //  editorconfig-textmate
 //
-//  Created by Rob Brackett on 7/25/12.
-//  Copyright (c) 2012 Rob Brackett. All rights reserved.
+//  Copyright (c) 2012 Rob Brackett.
+//  This is open source software, released under the MIT license;
+//  see the file LICENSE for details.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -17,6 +18,8 @@
 // Replacement for setRepresentedFilename
 // sends a kECDocumentDidChange notification
 - (void)ec_setRepresentedFilename:(NSString *)fileName;
+
+- (void)ec_setSettings:(NSDictionary *)settings forPath:(NSString *)path;
 
 - (BOOL)ec_setSoftTabs:(BOOL)softTabs;
 - (BOOL)ec_setTabSize:(int)tabSize;

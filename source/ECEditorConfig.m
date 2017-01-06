@@ -27,7 +27,7 @@
 
 @implementation ECEditorConfig
 
-#pragma mark Lifecycle
+#pragma mark - Lifecycle
 
 - (id)initWithPlugInController:(id <TMPlugInController>)aController {
     if(self = [self init]) {
@@ -64,7 +64,7 @@
 }
 
 
-#pragma mark Notifications
+#pragma mark - Notifications
 
 - (void)windowDocumentDidChange:(NSNotification *)notification {
     NSDictionary *info = notification.userInfo;
@@ -83,7 +83,7 @@
 }
 
 
-#pragma mark Utilities
+#pragma mark - Utilities
 
 - (NSDictionary *)configForPath:(NSString *)filePath {
     NSMutableDictionary *config = [NSMutableDictionary dictionary];
@@ -129,6 +129,8 @@
     if (max_line_length) {
         [window ec_setWrapColumn:max_line_length.intValue];
     }
+    
+    [window ec_setSettings:config forPath:nil];
     
     // TODO: end_of_line support
 }
