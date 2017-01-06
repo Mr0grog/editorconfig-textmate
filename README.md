@@ -5,7 +5,7 @@ This is a TextMate plug-in that provides support for [EditorConfig](http://edito
 
 Download it now at: https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
-Works in both TextMate and TextMate 2 Alpha (as of build 9487, October 8th, 2013).
+Only some features are support in TextMate 1 (all features work in TextMate 2). TM1 support may be removed in the near future, though older builds that support it will continue to be downloadable.
 
 
 Feature Support
@@ -17,8 +17,10 @@ The following Editor Config features are supported:
 - indent_style ("tab" or "space")
 - indent_size
 - tab_width
+- insert_final_newline (newline is added when saving a document)
+- trim_trailing_whitespace (whitespace is trimmed when saving a document)
 
-The `end_of_line` feature is not yet supported. Neither are upcoming features like `charset`, `trim_trailing_whitespace`, and `insert_final_newline`.
+The `end_of_line` and `charset` features are not yet supported (see #23 for tracking).
 
 
 Installation
@@ -28,25 +30,18 @@ You can download a precompiled binary from:
 
 https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
-Just un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install.
-
-If TextMate 2 is set as your default TextMate, you may need to manually drag `editorconfig-textmate.tmplugin` into `~/Library/Application Support/TextMate/PlugIns/`.
-
-To-Do
------
-
-Currently, [editorconfig-core](https://github.com/editorconfig/editorconfig-core) is included as a precompiled binary, but it really should be included as a submodule, with an appropriate build target in Xcode.
-
-Support for `end_of_line` is also needed, but I have to figure out exactly how to do it in TextMate first :P
+Just un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install. You can also drag the `.tmplugin` package into `~/Library/Application Support/TextMate/PlugIns/` in Finder.
 
 
-TextMate 2
-----------
+Issues
+------
 
-While this plug-in does support the TextMate 2 Alpha, please keep in mind that alpha software is subject to great change. It could break in future releases of TextMate. If this happens, please file an issue: https://github.com/Mr0grog/editorconfig-textmate/issues
+If you encounter issues or are interested in seeing new features added, please file an issue: https://github.com/Mr0grog/editorconfig-textmate/issues
+
+I am also happy to take pull requests :)
 
 
 License
 -------
 
-This plug-in is open source. It is copyright (c) 2012-2016 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.
+This plug-in is open source. It is copyright (c) 2012-2017 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.
