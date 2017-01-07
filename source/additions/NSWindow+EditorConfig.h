@@ -25,5 +25,7 @@
 - (BOOL)ec_setSoftTabs:(BOOL)softTabs;
 - (BOOL)ec_setTabSize:(NSUInteger)tabSize;
 - (BOOL)ec_setWrapColumn:(NSUInteger)wrapColumn;
+- (BOOL)ec_setNewline:(NSString *)newlineString;
+- (BOOL)ec_setEncoding:(NSString *)encoding;
 
 @end
