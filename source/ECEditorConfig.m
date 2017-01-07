@@ -91,7 +91,6 @@
         [window ec_setSoftTabs:(config.indentStyle == ECIndentStyleSpace)];
     }
     
-    // TM doesn't differentiate between tab- and space-indent sizes
     if (config.indentSize > 0) {
         [window ec_setTabSize:config.indentSize];
     }
