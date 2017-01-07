@@ -14,7 +14,4 @@
 
 - (id)initWithPlugInController:(id <TMPlugInController>)aController;
 
-- (NSDictionary *)configForPath:(NSString *)filePath;
-- (NSDictionary *)configForURL:(NSURL *)fileURL;
-
 @end

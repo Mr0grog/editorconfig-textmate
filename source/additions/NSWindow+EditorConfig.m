@@ -75,7 +75,7 @@
 
 #pragma mark - Commands
 
-- (void)ec_setSettings:(NSDictionary *)settings forPath:(NSString *)path {
+- (void)ec_setSettings:(ECSettings *)settings forPath:(NSString *)path {
     NSView *textView = self.ec_textView;
     NSObject *document = [textView performSelector:@selector(document)];
     if (document && (!path || [path isEqualToString:[document valueForKey:@"path"]])) {
@@ -108,7 +108,7 @@
     return success;
 }
 
-- (BOOL)ec_setTabSize:(int)tabSize {
+- (BOOL)ec_setTabSize:(NSUInteger)tabSize {
     BOOL success = NO;
     
     if (tabSize > 0) {
@@ -118,7 +118,7 @@
         if ([textView respondsToSelector:tabSizeSelector]) {
             IMP setter = [textView methodForSelector:tabSizeSelector];
             setter(textView, tabSizeSelector, tabSize);
-            DebugLog(@"(text view) Setting tab size: %d", tabSize);
+            DebugLog(@"(text view) Setting tab size: %ld", tabSize);
             success = YES;
         }
         
@@ -126,7 +126,7 @@
         if ([statusBar respondsToSelector:tabSizeSelector]) {
             IMP setter = [statusBar methodForSelector:tabSizeSelector];
             setter(statusBar, tabSizeSelector, tabSize);
-            DebugLog(@"(status bar) Setting tab size: %d", tabSize);
+            DebugLog(@"(status bar) Setting tab size: %ld", tabSize);
         }
         else {
             success = NO;
@@ -136,7 +136,7 @@
     return success;
 }
 
-- (BOOL)ec_setWrapColumn:(int)wrapColumn {
+- (BOOL)ec_setWrapColumn:(NSUInteger)wrapColumn {
     if (wrapColumn == 0) {
         return NO;
     }

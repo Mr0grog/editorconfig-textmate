@@ -8,6 +8,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ECSettings.h"
 
 // Because TM doesn't have a nice API, we have to mess with NSWindow :(
 @interface NSWindow (EditorConfig)
@@ -19,10 +20,10 @@
 // sends a kECDocumentDidChange notification
 - (void)ec_setRepresentedFilename:(NSString *)fileName;
 
-- (void)ec_setSettings:(NSDictionary *)settings forPath:(NSString *)path;
+- (void)ec_setSettings:(ECSettings *)settings forPath:(NSString *)path;
 
 - (BOOL)ec_setSoftTabs:(BOOL)softTabs;
-- (BOOL)ec_setTabSize:(int)tabSize;
-- (BOOL)ec_setWrapColumn:(int)wrapColumn;
+- (BOOL)ec_setTabSize:(NSUInteger)tabSize;
+- (BOOL)ec_setWrapColumn:(NSUInteger)wrapColumn;
 
 @end

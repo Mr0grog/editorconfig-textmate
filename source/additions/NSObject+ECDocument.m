@@ -12,13 +12,13 @@
 
 @implementation NSObject (ECDocument)
 
-- (void)setEc_settings:(NSDictionary *)ec_settings {
+- (void)setEc_settings:(ECSettings *)ec_settings {
     objc_setAssociatedObject(self, @selector(ec_settings), ec_settings, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (NSDictionary *)ec_settings {
+- (ECSettings *)ec_settings {
     id settings = objc_getAssociatedObject(self, @selector(ec_settings));
-    if (![settings isKindOfClass:[NSDictionary class]]) {
+    if (![settings isKindOfClass:[ECSettings class]]) {
         settings = nil;
     }
     return settings;

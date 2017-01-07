@@ -10,6 +10,7 @@
 #import <editorconfig/editorconfig_handle.h>
 #import <editorconfig/editorconfig.h>
 #import "ECConstants.h"
+#import "ECSettings.h"
 #import "NSWindow+EditorConfig.h"
 #import "NSView+EditorConfig.h"
 #import "ECEditorConfig.h"
@@ -19,7 +20,7 @@
 - (void)windowDocumentDidChange:(NSNotification *)notification;
 - (void)textViewDidSetDocument:(NSNotification *)notification;
 
-- (void)updateWindow:(NSWindow *)window withConfig:(NSDictionary *)config;
+- (void)updateWindow:(NSWindow *)window withConfig:(ECSettings *)config;
 - (NSString *)editorConfigCoreVersion;
 
 @end
@@ -70,7 +71,7 @@
     NSDictionary *info = notification.userInfo;
     DebugLog(@"File changed to: %@\n  in: %@", [info objectForKey:@"fileName"], [notification object]);
     
-    NSDictionary *config = [self configForPath:[info objectForKey:@"fileName"]];
+    ECSettings *config = [ECSettings settingsForPath:[info objectForKey:@"fileName"]];
     [self updateWindow:notification.object withConfig:config];
 }
 
@@ -78,56 +79,25 @@
     NSDictionary *info = notification.userInfo;
     DebugLog(@"Text View set to: %@\n  in: %@", [info objectForKey:@"fileName"], [notification object]);
     
-    NSDictionary *config = [self configForPath:[info objectForKey:@"fileName"]];
+    ECSettings *config = [ECSettings settingsForPath:[info objectForKey:@"fileName"]];
     [self updateWindow:[notification.object window] withConfig:config];
 }
 
 
 #pragma mark - Utilities
 
-- (NSDictionary *)configForPath:(NSString *)filePath {
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-    
-    if (filePath) {
-        editorconfig_handle handle = editorconfig_handle_init();
-        int resultCode = editorconfig_parse([filePath UTF8String], handle);
-        if (resultCode == 0) {
-            int itemCount = editorconfig_handle_get_name_value_count(handle);
-            for (int i = 0; i < itemCount; i++) {
-                char const *name;
-                char const *value;
-                editorconfig_handle_get_name_value(handle, i, &name, &value);
-                [config setValue:[NSString stringWithUTF8String:value] forKey:[NSString stringWithUTF8String:name]];
-            }
-        }
-        editorconfig_handle_destroy(handle);
-    }
-    
-    DebugLog(@"Config for %@: %@", filePath, config);
-    
-    return [[config copy] autorelease];
-}
-
-- (NSDictionary *)configForURL:(NSURL *)fileURL {
-    return [self configForPath:[fileURL path]];
-}
-
-- (void)updateWindow:(NSWindow *)window withConfig:(NSDictionary *)config {
-    NSString *indent_style = [config objectForKey:@"indent_style"];
-    if (indent_style) {
-        [window ec_setSoftTabs:[indent_style isEqualToString:@"space"]];
+- (void)updateWindow:(NSWindow *)window withConfig:(ECSettings *)config {
+    if (config.indentStyle != ECIndentStyleUnknown) {
+        [window ec_setSoftTabs:(config.indentStyle == ECIndentStyleSpace)];
     }
     
     // TM doesn't differentiate between tab- and space-indent sizes
-    NSString *sizeKey = [indent_style isEqualToString:@"tab"] ? @"tab_width" : @"indent_size";
-    NSString *indent_size = [config objectForKey:sizeKey];
-    if (indent_size) {
-        [window ec_setTabSize:[indent_size intValue]];
+    if (config.indentSize > 0) {
+        [window ec_setTabSize:config.indentSize];
     }
     
-    NSString *max_line_length = [config objectForKey:@"max_line_length"];
-    if (max_line_length) {
-        [window ec_setWrapColumn:max_line_length.intValue];
+    if (config.maxLineLength > 0) {
+        [window ec_setWrapColumn:config.maxLineLength];
     }
     
     [window ec_setSettings:config forPath:nil];
