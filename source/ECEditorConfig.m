@@ -99,9 +99,15 @@
         [window ec_setWrapColumn:config.maxLineLength];
     }
     
-    [window ec_setSettings:config forPath:nil];
+    if (config.endOfLine) {
+        [window ec_setNewline:config.endOfLine];
+    }
     
-    // TODO: end_of_line support
+    if (config.charset) {
+        [window ec_setEncoding:config.charset];
+    }
+    
+    [window ec_setSettings:config forPath:nil];
 }
 
 - (NSString *)editorConfigCoreVersion {
