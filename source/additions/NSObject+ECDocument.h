@@ -7,6 +7,8 @@
 //  see the file LICENSE for details.
 //
 
+#import "ECSettings.h"
+
 
 /**
  * This category lets us associate EditorConfig settings directly with an
@@ -15,6 +17,6 @@
  */
 @interface NSObject (ECDocument)
 
-@property (nonatomic, copy) NSDictionary *ec_settings;
+@property (nonatomic, copy) ECSettings *ec_settings;
 
 @end

@@ -43,6 +43,7 @@
 		CB47C5E815C0876400E068C7 /* LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB47C5E315C0874C00E068C7 /* LICENSE */; };
 		CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60468616F6D0EC004753CD /* libeditorconfig_static.a */; };
 		CB993E4F1DDF797500D3050B /* NSObject+ECDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */; };
+		CBE13DF31E206EA40069F96C /* ECSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE13DF21E206EA40069F96C /* ECSettings.m */; };
 		CBFF551715C35A8E0075328B /* NSView+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,8 @@
 		CB60468616F6D0EC004753CD /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditorconfig_static.a; path = editorconfig/libeditorconfig_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB993E4D1DDF797500D3050B /* NSObject+ECDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ECDocument.h"; sourceTree = "<group>"; };
 		CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ECDocument.m"; sourceTree = "<group>"; };
+		CBE13DF11E206EA40069F96C /* ECSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSettings.h; sourceTree = "<group>"; };
+		CBE13DF21E206EA40069F96C /* ECSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSettings.m; sourceTree = "<group>"; };
 		CBFF551515C35A8E0075328B /* NSView+EditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+EditorConfig.h"; sourceTree = "<group>"; };
 		CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+EditorConfig.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +209,8 @@
 				CB47C5B915C0584300E068C7 /* TMPlugInController.h */,
 				CB47C5C515C05DC900E068C7 /* ECConstants.h */,
 				CB47C5C615C05DCA00E068C7 /* ECConstants.m */,
+				CBE13DF11E206EA40069F96C /* ECSettings.h */,
+				CBE13DF21E206EA40069F96C /* ECSettings.m */,
 			);
 			path = source;
 			sourceTree = SOURCE_ROOT;
@@ -254,7 +259,7 @@
 		CB47C58F15C0538700E068C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Rob Brackett";
 			};
 			buildConfigurationList = CB47C59215C0538700E068C7 /* Build configuration list for PBXProject "editorconfig-textmate" */;
@@ -339,6 +344,7 @@
 				CB993E4F1DDF797500D3050B /* NSObject+ECDocument.m in Sources */,
 				CB47C5B715C057BE00E068C7 /* ECEditorConfig.m in Sources */,
 				CB47C5C015C05ABD00E068C7 /* NSObject+ECSwizzle.m in Sources */,
+				CBE13DF31E206EA40069F96C /* ECSettings.m in Sources */,
 				CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */,
 				CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */,
 				CBFF551715C35A8E0075328B /* NSView+EditorConfig.m in Sources */,
@@ -377,11 +383,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -391,7 +407,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -404,15 +422,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -424,7 +454,9 @@
 		CB47C5AB15C0538800E068C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
@@ -444,7 +476,9 @@
 		CB47C5AC15C0538800E068C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";

@@ -53,11 +53,8 @@
 #pragma mark - Private
 
 - (void)ec_applySettingsToDocument:(NSObject *)document {
-    NSDictionary *settings = document.ec_settings;
-    BOOL insertFinalNewline = [[settings objectForKey:@"insert_final_newline"] isEqualToString:@"true"];
-    BOOL trimTrailingWhitespace = [[settings objectForKey:@"trim_trailing_whitespace"] isEqualToString:@"true"];
-    
-    if (!(insertFinalNewline || trimTrailingWhitespace)) {
+    ECSettings *settings = document.ec_settings;
+    if (!(settings.insertFinalNewline || settings.trimTrailingWhitespace)) {
         return;
     }
     
@@ -70,13 +67,13 @@
         lineTerminator = @"\n";
     }
     
-    if (insertFinalNewline && ![content hasSuffix:lineTerminator]) {
+    if (settings.insertFinalNewline && ![content hasSuffix:lineTerminator]) {
         content = [content stringByAppendingString:lineTerminator];
         didChangeContent = YES;
     }
     
     // TODO: find a reasonable way to encapsulate all the logic here.
-    if (trimTrailingWhitespace) {
+    if (settings.trimTrailingWhitespace) {
         NSMutableString *newContent = [NSMutableString string];
         // Selections are an NSArray of NSValues boxing NSRanges
         // FIXME: this approach collapses column selections into a single contiguous range. Not sure on a better approach for now.
