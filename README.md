@@ -19,8 +19,8 @@ The following Editor Config features are supported:
 - tab_width
 - insert_final_newline (newline is added when saving a document)
 - trim_trailing_whitespace (whitespace is trimmed when saving a document)
-
-The `end_of_line` and `charset` features are not yet supported (see #23 for updates).
+- end_of_line
+- charset (the charset `utf-8-bom` is not supported; if you need it, please [file an issue](https://github.com/Mr0grog/editorconfig-textmate/issues).)
 
 
 Installation

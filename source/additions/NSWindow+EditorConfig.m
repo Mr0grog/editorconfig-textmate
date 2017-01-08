@@ -154,4 +154,25 @@
     return NO;
 }
 
+- (BOOL)ec_setNewline:(NSString *)newlineString {
+    NSView *textView = self.ec_textView;
+    NSObject *document = [textView performSelector:@selector(document)];
+    if (document) {
+        document.diskNewlines = newlineString;
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)ec_setEncoding:(NSString *)encoding {
+    NSView *textView = self.ec_textView;
+    NSObject *document = [textView performSelector:@selector(document)];
+    if (document) {
+        document.diskEncoding = encoding;
+        return YES;
+    }
+    return NO;
+}
+
+
 @end

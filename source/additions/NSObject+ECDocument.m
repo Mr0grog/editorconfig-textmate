@@ -12,6 +12,10 @@
 
 @implementation NSObject (ECDocument)
 
+// These are defined in OakDocument
+@dynamic diskEncoding;
+@dynamic diskNewlines;
+
 - (void)setEc_settings:(ECSettings *)ec_settings {
     objc_setAssociatedObject(self, @selector(ec_settings), ec_settings, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }

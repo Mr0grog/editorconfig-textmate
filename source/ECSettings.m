@@ -62,10 +62,10 @@
                 charset = @"UTF-8";
             }
             else if ([value isEqualToString:@"utf-16be"]) {
-                charset = @"UTF-16BE";
+                charset = @"UTF-16BE//BOM";
             }
             else if ([value isEqualToString:@"utf-16le"]) {
-                charset = @"UTF-16LE";
+                charset = @"UTF-16LE//BOM";
             }
             else {
                 DebugLog(@"Unknown charset value: '%@'", value);
