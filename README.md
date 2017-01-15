@@ -5,7 +5,7 @@ This is a TextMate plug-in that provides support for [EditorConfig](http://edito
 
 Download it now at: https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
-Only some features are support in TextMate 1 (all features work in TextMate 2). TM1 support may be removed in the near future, though older builds that support it will continue to be downloadable.
+EditorConfig-TextMate only supports TextMate 2 (see below for information about TextMate 1).
 
 
 Feature Support
@@ -30,7 +30,7 @@ You can download a precompiled binary from:
 
 https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
-Just un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install. You can also drag the `.tmplugin` package into `~/Library/Application Support/TextMate/PlugIns/` in Finder.
+Un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install. You can also manually drag the `.tmplugin` package into `~/Library/Application Support/TextMate/PlugIns/` in Finder.
 
 
 Issues
@@ -39,6 +39,19 @@ Issues
 If you encounter issues or are interested in seeing new features added, please file an issue: https://github.com/Mr0grog/editorconfig-textmate/issues
 
 I am also happy to take pull requests :)
+
+
+TextMate 1
+----------
+
+The current version of this plugin only supports TextMate 2, but [version 0.2.6](https://github.com/Mr0grog/editorconfig-textmate/releases/tag/v0.2.6) and earlier support TextMate 1. That version only supports the following EditorConfig properties:
+
+- root
+- indent_style ("tab" or "space")
+- indent_size
+- tab_width
+
+You can find older versions on the [releases page](https://github.com/Mr0grog/editorconfig-textmate/releases).
 
 
 License
