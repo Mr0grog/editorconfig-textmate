@@ -32,6 +32,8 @@ https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
 Un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install. You can also manually drag the `.tmplugin` package into `~/Library/Application Support/TextMate/PlugIns/` in Finder.
 
+**Note:** the plug-in will be loaded automatically after restarting TextMate.
+It will not be listed in the bundles list, since bundles and plug-ins are different things in TextMate.
 
 Issues
 ------
