@@ -21,6 +21,7 @@ The following Editor Config features are supported:
 - trim_trailing_whitespace (whitespace is trimmed when saving a document)
 - end_of_line
 - charset (the charset `utf-8-bom` is not supported; if you need it, please [file an issue](https://github.com/Mr0grog/editorconfig-textmate/issues).)
+- max_line_length (sets TextMate’s “wrap column,” but does not necessarily trigger hard line wraps)
 
 
 Installation

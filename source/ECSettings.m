@@ -79,7 +79,7 @@
             settings.insertFinalNewline = [value isEqualToString:@"true"];
         }
         else if ([name isEqualToString:@"max_line_length"]) {
-            settings.indentSize = [value integerValue];
+            settings.maxLineLength = [value integerValue];
         }
         else {
             DebugLog(@"Unknown setting: '%@'", name);
