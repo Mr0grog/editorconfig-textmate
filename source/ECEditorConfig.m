@@ -32,28 +32,26 @@
 
 - (id)initWithPlugInController:(id <TMPlugInController>)aController {
     if(self = [self init]) {
-        DebugLog(@"Initializing EditorConfig-TextMate for TextMate %f with EditorConfig-Core %@.",
-                 aController.version,
-                 [self editorConfigCoreVersion]);
-        
-        if (aController.version < 2.0) {
-            // Make the window fire a notification when a new document is shown
-            [NSWindow ec_init];
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(windowDocumentDidChange:)
-                                                         name:kECDocumentDidChange
-                                                       object:nil];
-        }
-        else {
-            // In TM2, actually showing the document may happen much later than on NSWindow -setRepresentedFile:
-            // One example of this is if a window is not frontmost.
-            // Instead, we check the actual text view. This is more of a hack, but seems to be the only reliable way.
+        if (aController.version >= 2.0) {
+            DebugLog(@"Initializing EditorConfig-TextMate for TextMate %f with EditorConfig-Core %@.",
+                     aController.version,
+                     [self editorConfigCoreVersion]);
+            
+            // Add notifications to the text view so we know when a new document
+            // is shown. (Note: NSWindow -setRepresentedFile: would be much
+            // easier, but does not actually have the correct timing with when
+            // that document is actually loaded and shown.)
             Class oakTextView = NSClassFromString(@"OakTextView");
             [oakTextView ec_init];
             [[NSNotificationCenter defaultCenter] addObserver:self
                                                      selector:@selector(textViewDidSetDocument:)
                                                          name:kECTextViewDidSetDocument
                                                        object:nil];
+        }
+        else {
+            // Log in production builds so users can find this message
+            NSLog(@"EditorConfig-TextMate is not compatible with TextMate v%f.",
+                  aController.version);
         }
 	}
 	return self;
@@ -77,7 +75,6 @@
 
 - (void)textViewDidSetDocument:(NSNotification *)notification {
     NSDictionary *info = notification.userInfo;
-    DebugLog(@"Text View set to: %@\n  in: %@", [info objectForKey:@"fileName"], [notification object]);
     
     ECSettings *config = [ECSettings settingsForPath:[info objectForKey:@"fileName"]];
     [self updateWindow:[notification.object window] withConfig:config];
