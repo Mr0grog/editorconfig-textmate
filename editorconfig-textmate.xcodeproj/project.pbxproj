@@ -23,7 +23,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = CB60467A16F6B558004753CD /* Build configuration list for PBXAggregateTarget "EditorConfig-Core" */;
 			buildPhases = (
-				CB60467916F6B558004753CD /* ShellScript */,
+				CB60467916F6B558004753CD /* Run Script */,
 			);
 			dependencies = (
 			);
@@ -33,16 +33,16 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		CB14B82E1A1FDE020055DD5E /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB14B82D1A1FDE020055DD5E /* libpcre.a */; };
 		CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47C59B15C0538800E068C7 /* Cocoa.framework */; };
 		CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB47C5A415C0538800E068C7 /* InfoPlist.strings */; };
 		CB47C5B715C057BE00E068C7 /* ECEditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5B615C057BE00E068C7 /* ECEditorConfig.m */; };
 		CB47C5C015C05ABD00E068C7 /* NSObject+ECSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5BF15C05ABD00E068C7 /* NSObject+ECSwizzle.m */; };
 		CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */; };
 		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
-		CB47C5E815C0876400E068C7 /* LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB47C5E315C0874C00E068C7 /* LICENSE */; };
 		CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60468616F6D0EC004753CD /* libeditorconfig_static.a */; };
 		CB993E4F1DDF797500D3050B /* NSObject+ECDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */; };
+		CBACAC642339B31300F3B043 /* libpcre2-8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBACAC632339B31300F3B043 /* libpcre2-8.a */; };
+		CBACAC6D233A7FED00F3B043 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CBACAC6C233A7FED00F3B043 /* LICENSE */; };
 		CBE13DF31E206EA40069F96C /* ECSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE13DF21E206EA40069F96C /* ECSettings.m */; };
 		CBFF551715C35A8E0075328B /* NSView+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */; };
 /* End PBXBuildFile section */
@@ -65,20 +65,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CB47C5E715C0875A00E068C7 /* CopyFiles */ = {
+		CB47C5E715C0875A00E068C7 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents;
 			dstSubfolderSpec = 1;
 			files = (
-				CB47C5E815C0876400E068C7 /* LICENSE in CopyFiles */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CB14B82D1A1FDE020055DD5E /* libpcre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpcre.a; path = lib/pcre/libpcre.a; sourceTree = "<group>"; };
 		CB47C59815C0538800E068C7 /* editorconfig-textmate.tmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "editorconfig-textmate.tmplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB47C59B15C0538800E068C7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CB47C59E15C0538800E068C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -96,13 +95,14 @@
 		CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+EditorConfig.m"; sourceTree = "<group>"; };
 		CB47C5C515C05DC900E068C7 /* ECConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECConstants.h; sourceTree = "<group>"; };
 		CB47C5C615C05DCA00E068C7 /* ECConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECConstants.m; sourceTree = "<group>"; };
-		CB47C5E315C0874C00E068C7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CB47C5E415C0874C00E068C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CB60468116F6CAA2004753CD /* editorconfig_handle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig_handle.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig_handle.h"; sourceTree = SOURCE_ROOT; };
 		CB60468216F6CAA2004753CD /* editorconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig.h"; sourceTree = SOURCE_ROOT; };
 		CB60468616F6D0EC004753CD /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditorconfig_static.a; path = editorconfig/libeditorconfig_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB993E4D1DDF797500D3050B /* NSObject+ECDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ECDocument.h"; sourceTree = "<group>"; };
 		CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ECDocument.m"; sourceTree = "<group>"; };
+		CBACAC632339B31300F3B043 /* libpcre2-8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpcre2-8.a"; path = "lib/pcre/libpcre2-8.a"; sourceTree = "<group>"; };
+		CBACAC6C233A7FED00F3B043 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CBE13DF11E206EA40069F96C /* ECSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSettings.h; sourceTree = "<group>"; };
 		CBE13DF21E206EA40069F96C /* ECSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSettings.m; sourceTree = "<group>"; };
 		CBFF551515C35A8E0075328B /* NSView+EditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+EditorConfig.h"; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */,
-				CB14B82E1A1FDE020055DD5E /* libpcre.a in Frameworks */,
 				CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */,
+				CBACAC642339B31300F3B043 /* libpcre2-8.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 		CB47C58D15C0538700E068C7 = {
 			isa = PBXGroup;
 			children = (
-				CB47C5E315C0874C00E068C7 /* LICENSE */,
+				CBACAC6C233A7FED00F3B043 /* LICENSE */,
 				CB47C5E415C0874C00E068C7 /* README.md */,
 				CB47C5A115C0538800E068C7 /* editorconfig-textmate */,
 				CB47C5AD15C0570C00E068C7 /* lib */,
@@ -146,7 +146,7 @@
 		CB47C59A15C0538800E068C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CB14B82D1A1FDE020055DD5E /* libpcre.a */,
+				CBACAC632339B31300F3B043 /* libpcre2-8.a */,
 				CB60468616F6D0EC004753CD /* libeditorconfig_static.a */,
 				CB47C59B15C0538800E068C7 /* Cocoa.framework */,
 				CB47C59D15C0538800E068C7 /* Other Frameworks */,
@@ -241,7 +241,7 @@
 				CB47C59515C0538700E068C7 /* Frameworks */,
 				CB47C59615C0538700E068C7 /* Resources */,
 				CB47C5E215C0858300E068C7 /* Copy Library Licenses */,
-				CB47C5E715C0875A00E068C7 /* CopyFiles */,
+				CB47C5E715C0875A00E068C7 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -259,14 +259,21 @@
 		CB47C58F15C0538700E068C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Rob Brackett";
+				TargetAttributes = {
+					CB47C59715C0538700E068C7 = {
+						DevelopmentTeam = HPJWEKK787;
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = CB47C59215C0538700E068C7 /* Build configuration list for PBXProject "editorconfig-textmate" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CB47C58D15C0538700E068C7;
@@ -286,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBACAC6D233A7FED00F3B043 /* LICENSE in Resources */,
 				CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Killing TextMate...\"\nkillall TextMate\n\necho \"Installing PlugIn...\"\ncp -r \"$BUILT_PRODUCTS_DIR/\"*.tmplugin \"$USER_LIBRARY_DIR/Application Support/TextMate/PlugIns/\"";
+			shellScript = "echo \"Killing TextMate...\"\nkillall TextMate\n\necho \"Installing PlugIn...\"\ncp -r \"$BUILT_PRODUCTS_DIR/\"*.tmplugin \"$USER_LIBRARY_DIR/Application Support/TextMate/PlugIns/\"\n";
 		};
 		CB47C5E215C0858300E068C7 /* Copy Library Licenses */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -318,21 +326,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"$SRCROOT/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/LICENSE-editorconfig-core\"\ncp \"$SRCROOT/lib/pcre/LICENCE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/LICENSE-pcre\"\n";
+			shellScript = "cp \"$SRCROOT/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-editorconfig-core\"\ncp \"$SRCROOT/lib/pcre/LICENCE-pcre\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-pcre\"\n";
 		};
-		CB60467916F6B558004753CD /* ShellScript */ = {
+		CB60467916F6B558004753CD /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/editorconfig/libeditorconfig_static.a",
+				"$(DERIVED_FILE_DIR)/editorconfig/LICENSE",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$TEMP_FILES_DIR\"\nrm -rf \"coremake\"\nmkdir \"coremake\"\ncd \"coremake\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=i386;x86_64\" -DPCRE_LIBRARY=$PROJECT_DIR/lib/pcre/libpcre.a -DPCRE_INCLUDE_DIR=$PROJECT_DIR/lib/pcre/include/ -DPCRE_STATIC=ON \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
+			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$PROJECT_DIR/lib/editorconfig-core\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=x86_64\" -DPCRE_LIBRARY=$PROJECT_DIR/lib/pcre/libpcre2-8.a -DPCRE2_INCLUDE_DIRS=$PROJECT_DIR/lib/pcre/include/ -DPCRE2_STATIC=ON -DBUILD_DOCUMENTATION=OFF\n \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -412,7 +422,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
@@ -445,7 +455,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
@@ -457,6 +467,12 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 0.4.0;
+				DEVELOPMENT_TEAM = HPJWEKK787;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
@@ -466,9 +482,13 @@
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/pcre",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.robbrackett.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = tmplugin;
 			};
 			name = Debug;
@@ -479,6 +499,12 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 0.4.0;
+				DEVELOPMENT_TEAM = HPJWEKK787;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "editorconfig-textmate/editorconfig-textmate-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
@@ -488,9 +514,13 @@
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/pcre",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.robbrackett.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = tmplugin;
 			};
 			name = Release;

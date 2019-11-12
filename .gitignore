@@ -1,4 +1,6 @@
 *.DS_Store
+scratch.*
+.env
 
 # Xcode
 *.pbxuser
