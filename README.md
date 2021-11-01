@@ -151,4 +151,4 @@ $ spctl -a -t install -vv editorconfig-textmate.tmplugin
 License
 -------
 
-This plug-in is open source. It is copyright (c) 2012-2019 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.
+This plug-in is open source. It is copyright (c) 2012-2021 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.
