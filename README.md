@@ -83,37 +83,43 @@ In practice, the process is:
 
     ```sh
     # This uploads the zip to Apple and might take a minute.
-    $ xcrun altool \
-        --notarize-app \
-        --primary-bundle-id 'org.robbrackett.editorconfig-textmate' \
-        --username $NOTARIZE_USERNAME \
-        --password $NOTARIZE_PASSWORD \
-        --asc-provider $NOTARIZE_PROVIDER_SHORTNAME \
-        --file editorconfig-textmate.tmplugin.zip
+    $ xcrun notarytool submit editorconfig-textmate.tmplugin.zip \
+        --apple-id "$NOTARIZE_USERNAME" \
+        --password "$NOTARIZE_PASSWORD" \
+        --team-id "$NOTARIZE_TEAM" \
+        --wait
     # Should result in something like:
-    # No errors uploading 'editorconfig-textmate.tmplugin.zip'.
-    # RequestUUID = xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    # Conducting pre-submission checks for editorconfig-textmate.tmplugin.zip and initiating connection to the Apple notary service...
+    # Submission ID received
+    #   id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    # Successfully uploaded file
+    #   id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    #   path: /path/to/editorconfig-texmate.tmplugin.zip
+    # Waiting for processing to complete.
+    # Current status: Accepted........
+    # Processing complete
+    #   id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    #   status: Accepted
     ```
     
-    NOTE: you’ll need to have an app-specific password for the AppleID account you are notarizing with. You can set one up on the AppleID profile page.
+    NOTE: you’ll need to have an app-specific password for the AppleID account you are notarizing with. You can set one up on the AppleID profile page. You’ll also need to know your WWDRTeamID, which you can get by running `xcrun altool --list-providers`.
     
     The above command also assumes you have some environment variables with the appropriate values.
 
-5. Wait for an e-mail indicating that notarization is complete. You can also poll for the status on the command line:
+5. The above command should keep running until notarization is complete. If it times out, though, you can also poll for the status on the command line:
 
     ```sh
-    $ xcrun altool \
-        --notarization-history 0 \
-        --username $NOTARIZE_USERNAME \
-        --password $NOTARIZE_PASSWORD
-    # Should result in something like:
-    # Notarization History - page 0
-    #
-    # Date                      RequestUUID                          Status  Status Code Status Message
-    # ------------------------- ------------------------------------ ------- ----------- ----------------
-    # 2019-11-12 01:04:43 +0000 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx success 0           Package Approved
-    #
-    # Next page value: abcxyz
+    $ xcrun notarytool history \
+        --apple-id "$NOTARIZE_USERNAME" \
+        --password "$NOTARIZE_PASSWORD" \
+        --team-id "$NOTARIZE_TEAM"
+    # Successfully received submission history.
+    #  history
+    #     --------------------------------------------------
+    #     createdDate: 2021-11-01T03:02:21.177Z
+    #     id: f868dd45-7c71-4f48-a678-8fa1d1718d2d
+    #     name: editorconfig-textmate.tmplugin.zip
+    #     status: Accepted
     ```
     
     For troubleshooting help here, see the [“Check the Status of Your Request”](https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow?language=objc#3087732) section of Apple’s docs.
@@ -151,4 +157,4 @@ $ spctl -a -t install -vv editorconfig-textmate.tmplugin
 License
 -------
 
-This plug-in is open source. It is copyright (c) 2012-2019 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.
+This plug-in is open source. It is copyright (c) 2012-2021 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.
