@@ -484,6 +484,7 @@
 					"$(PROJECT_DIR)/lib",
 					"$(PROJECT_DIR)/lib/pcre",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = "0.4.2-dev";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
@@ -517,6 +518,7 @@
 					"$(PROJECT_DIR)/lib",
 					"$(PROJECT_DIR)/lib/pcre",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = "0.4.2-dev";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
