@@ -12,6 +12,9 @@
 #import "NSObject+ECSwizzle.h"
 #import "NSWindow+EditorConfig.h"
 
+typedef void (*BooleanSetter)(id, SEL, BOOL);
+typedef void (*IntegerSetter)(id, SEL, NSUInteger);
+
 @implementation NSWindow (EditorConfig)
 
 + (void)ec_init {
@@ -89,7 +92,7 @@
     
     NSView *textView = self.ec_textView;
     if ([textView respondsToSelector:softTabSelector]) {
-        IMP setter = [textView methodForSelector:softTabSelector];
+        BooleanSetter setter = (BooleanSetter)[textView methodForSelector:softTabSelector];
         setter(textView, softTabSelector, softTabs);
         DebugLog(@"(text view) Setting softabs: %@", softTabs ? @"ON" : @"OFF");
         success = YES;
@@ -97,7 +100,7 @@
     
     NSView *statusBar = self.ec_statusBar;
     if ([statusBar respondsToSelector:softTabSelector]) {
-        IMP setter = [statusBar methodForSelector:softTabSelector];
+        BooleanSetter setter = (BooleanSetter)[statusBar methodForSelector:softTabSelector];
         setter(statusBar, softTabSelector, softTabs);
         DebugLog(@"(status bar) Setting softabs: %@", softTabs ? @"ON" : @"OFF");
     }
@@ -116,7 +119,7 @@
         
         NSView *textView = self.ec_textView;
         if ([textView respondsToSelector:tabSizeSelector]) {
-            IMP setter = [textView methodForSelector:tabSizeSelector];
+            IntegerSetter setter = (IntegerSetter)[textView methodForSelector:tabSizeSelector];
             setter(textView, tabSizeSelector, tabSize);
             DebugLog(@"(text view) Setting tab size: %ld", tabSize);
             success = YES;
@@ -124,7 +127,7 @@
         
         NSView *statusBar = self.ec_statusBar;
         if ([statusBar respondsToSelector:tabSizeSelector]) {
-            IMP setter = [statusBar methodForSelector:tabSizeSelector];
+            IntegerSetter setter = (IntegerSetter)[statusBar methodForSelector:tabSizeSelector];
             setter(statusBar, tabSizeSelector, tabSize);
             DebugLog(@"(status bar) Setting tab size: %ld", tabSize);
         }
@@ -145,7 +148,7 @@
     SEL wrapColumnSelector = @selector(setWrapColumn:);
     
     if ([textView respondsToSelector:wrapColumnSelector]) {
-        IMP setter = [textView methodForSelector:wrapColumnSelector];
+        IntegerSetter setter = (IntegerSetter)[textView methodForSelector:wrapColumnSelector];
         setter(textView, wrapColumnSelector, wrapColumn);
         DebugLog(@"(text view) Setting wrap column: %ld", (long)wrapColumn);
         return YES;
