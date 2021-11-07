@@ -5,7 +5,7 @@ This is a TextMate plug-in that provides support for [EditorConfig](http://edito
 
 Download it now at: https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
-EditorConfig-TextMate only supports TextMate 2 (see below for information about TextMate 1).
+EditorConfig-TextMate only supports TextMate 2 (see below for information about TextMate 1) on MacOS 11.0 or later. It should work with both Intel and Apple processors.
 
 
 Feature Support
