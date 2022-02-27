@@ -1,0 +1,7 @@
+# Sources/caches
+pcre2-*
+
+# Build products
+include
+libpcre2-8.a
+LICENCE-pcre
