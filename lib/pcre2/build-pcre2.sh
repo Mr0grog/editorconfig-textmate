@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VERSION='10.39'
+VERSION='10.40'
 PCRE2_DIR=$(cd $(dirname $0) && pwd)
 SOURCE_PATH="${PCRE2_DIR}/pcre2-${VERSION}"
 BUILD_PATH="${PCRE2_DIR}/pcre2-build"
