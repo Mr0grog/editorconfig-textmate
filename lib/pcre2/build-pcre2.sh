@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Downloads and Builds PCRE2 on demand.
+# 
+# Usage:
+#   ./build-pcre2.sh [OUTPUT_PATH]
+# 
+# If you don't set an output path, it will use `./build`.
+
 VERSION='10.40'
 PCRE2_DIR=$(cd $(dirname $0) && pwd)
 SOURCE_PATH="${PCRE2_DIR}/pcre2-${VERSION}"
-BUILD_PATH="${PCRE2_DIR}/pcre2-build"
+BUILD_PATH="${1:-"${PCRE2_DIR}/build"}"
 
 # Download a copy of the pcre2 source
 if [ ! -d "${SOURCE_PATH}" ]; then
@@ -13,9 +20,10 @@ if [ ! -d "${SOURCE_PATH}" ]; then
   echo "Downloading pcre2 ${VERSION}..."
   curl --location "https://github.com/PhilipHazel/pcre2/releases/download/pcre2-${VERSION}/pcre2-${VERSION}.tar.bz2" > "${SOURCE_PATH}.tar.bz2"
   tar -xzf "${SOURCE_PATH}.tar.bz2"
+  echo ""
 fi
 
-echo "Building pcre2..."
+echo "Building pcre2 in ${BUILD_PATH}..."
 cd "${SOURCE_PATH}"
 mkdir -p "${BUILD_PATH}"
 # Loosely based on Homebrew's settings
