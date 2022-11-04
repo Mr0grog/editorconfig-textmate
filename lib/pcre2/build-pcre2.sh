@@ -27,6 +27,7 @@ CFLAGS='-arch x86_64 -arch arm64 -mmacosx-version-min=11.0' ./configure \
   --prefix "${BUILD_PATH}"
 make
 make install
+cp "${SOURCE_PATH}/LICENCE" "${BUILD_PATH}/LICENCE"
 
 # Verify architectures
 ARCHITECTURES="$(lipo -info "${BUILD_PATH}/lib/libpcre2-8.a")"
@@ -37,8 +38,3 @@ if [[ "${ARCHITECTURES}" != *'x86_64'* ]] || [[ "${ARCHITECTURES}" != *'arm64'* 
   echo "  ${ARCHITECTURES}"
   exit 1
 fi
-
-# Copy relevant files
-cp "${SOURCE_PATH}/LICENCE" "${PCRE2_DIR}/LICENCE-pcre"
-cp "${BUILD_PATH}/lib/libpcre2-8.a" "${PCRE2_DIR}/"
-cp -R "${BUILD_PATH}/include" "${PCRE2_DIR}/include"

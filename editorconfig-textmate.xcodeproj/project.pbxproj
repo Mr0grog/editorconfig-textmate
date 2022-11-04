@@ -26,8 +26,20 @@
 				CB60467916F6B558004753CD /* Run Script */,
 			);
 			dependencies = (
+				CBBD16AC29148BA20022E52D /* PBXTargetDependency */,
 			);
 			name = "EditorConfig-Core";
+			productName = "Install & Run in TM";
+		};
+		CBBD16A6291485F20022E52D /* PCRE2 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CBBD16A8291485F20022E52D /* Build configuration list for PBXAggregateTarget "PCRE2" */;
+			buildPhases = (
+				CBBD16A7291485F20022E52D /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = PCRE2;
 			productName = "Install & Run in TM";
 		};
 /* End PBXAggregateTarget section */
@@ -61,6 +73,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CB60467616F6B558004753CD;
 			remoteInfo = "EditorConfig-Core";
+		};
+		CBBD16AB29148BA20022E52D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB47C58F15C0538700E068C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBBD16A6291485F20022E52D;
+			remoteInfo = PCRE2;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -101,7 +120,7 @@
 		CB60468616F6D0EC004753CD /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditorconfig_static.a; path = editorconfig/libeditorconfig_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB993E4D1DDF797500D3050B /* NSObject+ECDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ECDocument.h"; sourceTree = "<group>"; };
 		CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ECDocument.m"; sourceTree = "<group>"; };
-		CBACAC632339B31300F3B043 /* libpcre2-8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpcre2-8.a"; path = "lib/pcre/libpcre2-8.a"; sourceTree = "<group>"; };
+		CBACAC632339B31300F3B043 /* libpcre2-8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpcre2-8.a"; path = "pcre2/libpcre2-8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBACAC6C233A7FED00F3B043 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CBE13DF11E206EA40069F96C /* ECSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSettings.h; sourceTree = "<group>"; };
 		CBE13DF21E206EA40069F96C /* ECSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSettings.m; sourceTree = "<group>"; };
@@ -284,6 +303,7 @@
 				CB47C59715C0538700E068C7 /* editorconfig-textmate */,
 				CB47C5D515C07CFB00E068C7 /* Install & Run in TM */,
 				CB60467616F6B558004753CD /* EditorConfig-Core */,
+				CBBD16A6291485F20022E52D /* PCRE2 */,
 			);
 		};
 /* End PBXProject section */
@@ -326,7 +346,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"$SRCROOT/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-editorconfig-core\"\ncp \"$SRCROOT/lib/pcre/LICENCE-pcre\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-pcre\"\n";
+			shellScript = "cp \"$BUILT_PRODUCTS_DIR/editorconfig/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-editorconfig-core\"\ncp \"$BUILT_PRODUCTS_DIR/pcre2/LICENCE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-pcre\"\n";
 		};
 		CB60467916F6B558004753CD /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -342,7 +362,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$PROJECT_DIR/lib/editorconfig-core\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=x86_64;arm64\" -DPCRE2_LIBRARY_RELEASE=$PROJECT_DIR/lib/pcre/libpcre2-8.a -DPCRE2_INCLUDE_DIR=$PROJECT_DIR/lib/pcre/include/ -DPCRE2_STATIC=ON -DBUILD_DOCUMENTATION=OFF\n \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
+			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$PROJECT_DIR/lib/editorconfig-core\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=x86_64;arm64\" -DPCRE2_LIBRARY_RELEASE=$BUILT_PRODUCTS_DIR/pcre2/libpcre2-8.a -DPCRE2_INCLUDE_DIR=$BUILT_PRODUCTS_DIR/pcre2/include/ -DPCRE2_STATIC=ON -DBUILD_DOCUMENTATION=OFF\n \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
+		};
+		CBBD16A7291485F20022E52D /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/editorconfig/libeditorconfig_static.a",
+				"$(DERIVED_FILE_DIR)/editorconfig/LICENSE",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\n\n# Build\nexport PATH=\"/usr/local/bin/:$PATH\"\ncd \"$PROJECT_DIR/lib/pcre2\"\n./build-pcre2.sh\n\n# Copy Outputs\nmkdir -p \"$BUILT_PRODUCTS_DIR/pcre2\"\ncp \"pcre2-build/lib/libpcre2-8.a\" \"$BUILT_PRODUCTS_DIR/pcre2/\"\ncp \"$PROJECT_DIR/lib/pcre2/pcre2-build/include/\"* \"$BUILT_PRODUCTS_DIR/pcre2/\"\ncp \"$PROJECT_DIR/lib/pcre2/pcre2-build/LICENCE\" \"$BUILT_PRODUCTS_DIR/pcre2/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -373,6 +409,11 @@
 			isa = PBXTargetDependency;
 			target = CB60467616F6B558004753CD /* EditorConfig-Core */;
 			targetProxy = CB60467F16F6BCD7004753CD /* PBXContainerItemProxy */;
+		};
+		CBBD16AC29148BA20022E52D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBBD16A6291485F20022E52D /* PCRE2 */;
+			targetProxy = CBBD16AB29148BA20022E52D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -561,6 +602,22 @@
 			};
 			name = Release;
 		};
+		CBBD16A9291485F20022E52D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CBBD16AA291485F20022E52D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -596,6 +653,15 @@
 			buildConfigurations = (
 				CB60467B16F6B558004753CD /* Debug */,
 				CB60467C16F6B558004753CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBBD16A8291485F20022E52D /* Build configuration list for PBXAggregateTarget "PCRE2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBBD16A9291485F20022E52D /* Debug */,
+				CBBD16AA291485F20022E52D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
