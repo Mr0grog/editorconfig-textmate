@@ -1,0 +1,5 @@
+# Sources/caches
+pcre2-*
+
+# Build products
+build
