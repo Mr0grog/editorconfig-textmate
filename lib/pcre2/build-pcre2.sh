@@ -32,6 +32,7 @@ CFLAGS='-arch x86_64 -arch arm64 -mmacosx-version-min=11.0' ./configure \
   --enable-pcre2grep-libz \
   --enable-pcre2grep-libbz2 \
   --enable-jit \
+  --disable-shared \
   --prefix "${BUILD_PATH}"
 make
 make install

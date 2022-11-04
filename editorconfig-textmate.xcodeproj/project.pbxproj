@@ -53,8 +53,8 @@
 		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
 		CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60468616F6D0EC004753CD /* libeditorconfig_static.a */; };
 		CB993E4F1DDF797500D3050B /* NSObject+ECDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */; };
-		CBACAC642339B31300F3B043 /* libpcre2-8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBACAC632339B31300F3B043 /* libpcre2-8.a */; };
 		CBACAC6D233A7FED00F3B043 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CBACAC6C233A7FED00F3B043 /* LICENSE */; };
+		CBBD16AD2914C01F0022E52D /* libpcre2-8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBACAC632339B31300F3B043 /* libpcre2-8.a */; };
 		CBE13DF31E206EA40069F96C /* ECSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE13DF21E206EA40069F96C /* ECSettings.m */; };
 		CBFF551715C35A8E0075328B /* NSView+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF551615C35A8E0075328B /* NSView+EditorConfig.m */; };
 /* End PBXBuildFile section */
@@ -134,8 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB47C59C15C0538800E068C7 /* Cocoa.framework in Frameworks */,
+				CBBD16AD2914C01F0022E52D /* libpcre2-8.a in Frameworks */,
 				CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */,
-				CBACAC642339B31300F3B043 /* libpcre2-8.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$PROJECT_DIR/lib/editorconfig-core\"\ncmake -D \"CMAKE_OSX_ARCHITECTURES:STRING=x86_64;arm64\" -DPCRE2_LIBRARY_RELEASE=$BUILT_PRODUCTS_DIR/pcre2/lib/libpcre2-8.a -DPCRE2_INCLUDE_DIR=$BUILT_PRODUCTS_DIR/pcre2/include/ -DPCRE2_STATIC=ON -DBUILD_DOCUMENTATION=OFF\n \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
+			shellScript = "export PATH=\"/usr/local/bin/:$PATH\"\necho \"Building EditorConfig-Core...\"\ncd \"$PROJECT_DIR/lib/editorconfig-core\"\ncmake \\\n    -D \"CMAKE_OSX_ARCHITECTURES:STRING=x86_64;arm64\" \\\n    -D \"CMAKE_OSX_DEPLOYMENT_TARGET:STRING=11.0\" \\\n    -DPCRE2_LIBRARY_RELEASE=$BUILT_PRODUCTS_DIR/pcre2/lib/libpcre2-8.a \\\n    -DPCRE2_INCLUDE_DIR=$BUILT_PRODUCTS_DIR/pcre2/include/ \\\n    -DPCRE2_STATIC=ON \\\n    -DBUILD_DOCUMENTATION=OFF \\\n    \"$PROJECT_DIR/lib/editorconfig-core\"\nmake\nmkdir -p \"$BUILT_PRODUCTS_DIR/editorconfig\"\ncp \"lib/libeditorconfig_static.a\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/include/editorconfig/\"* \"$BUILT_PRODUCTS_DIR/editorconfig/\"\ncp \"$PROJECT_DIR/lib/editorconfig-core/LICENSE\" \"$BUILT_PRODUCTS_DIR/editorconfig/\"\n";
 		};
 		CBBD16A7291485F20022E52D /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -463,7 +463,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
@@ -496,7 +496,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
@@ -521,9 +521,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/pcre2/lib/**",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
-					"$(PROJECT_DIR)/lib",
-					"$(PROJECT_DIR)/lib/pcre",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = "0.5.0-alpha2";
@@ -555,9 +554,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/pcre2/lib/**",
 					"$(BUILT_PRODUCTS_DIR)/editorconfig/**",
-					"$(PROJECT_DIR)/lib",
-					"$(PROJECT_DIR)/lib/pcre",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = "0.5.0-alpha2";
