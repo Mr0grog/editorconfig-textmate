@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2012-2019 Rob Brackett. This is open source software and released under the MIT license.</string>
+	<string>Copyright © 2012-2022 Rob Brackett. This is open source software and released under the MIT license.</string>
 	<key>NSPrincipalClass</key>
 	<string>ECEditorConfig</string>
 	<key>TMPlugInAPIVersion</key>

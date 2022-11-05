@@ -5,7 +5,7 @@ This is a TextMate plug-in that provides support for [EditorConfig](http://edito
 
 Download it now at: https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
-EditorConfig-TextMate only supports TextMate 2 (see below for information about TextMate 1) on MacOS 11.0 or later. It should work with both Intel and Apple processors.
+EditorConfig-TextMate only supports TextMate 2 (see below for information about TextMate 1) on MacOS 11.0 or later. It works with both Intel and Apple processors.
 
 
 Feature Support
@@ -31,7 +31,7 @@ You can download a precompiled binary from:
 
 https://github.com/Mr0grog/editorconfig-textmate/releases/latest
 
-Un-tar it and double-click the `editorconfig-textmate.tmplugin` file to install. You can also manually drag the `.tmplugin` package into `~/Library/Application Support/TextMate/PlugIns/` in Finder.
+Unzip it and double-click the `editorconfig-textmate.tmplugin` file to install. You can also manually drag the `.tmplugin` bundle into `~/Library/Application Support/TextMate/PlugIns/` in Finder.
 
 **Note:** the plug-in will be loaded automatically after restarting TextMate.
 It will not be listed in the bundles list, since bundles and plug-ins are different things in TextMate.
@@ -157,4 +157,4 @@ $ spctl -a -t install -vv editorconfig-textmate.tmplugin
 License
 -------
 
-This plug-in is open source. It is copyright (c) 2012-2021 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.
+This plug-in is open source. It is copyright (c) 2012-2022 Rob Brackett and licensed under the MIT license. The full license text is in the `LICENSE` file.

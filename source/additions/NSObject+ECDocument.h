@@ -2,7 +2,7 @@
 //  NSObject+ECDocument.h
 //  editorconfig-textmate
 //
-//  Copyright (c) 2012-2017 Rob Brackett.
+//  Copyright (c) 2012-2022 Rob Brackett.
 //  This is open source software, released under the MIT license;
 //  see the file LICENSE for details.
 //
