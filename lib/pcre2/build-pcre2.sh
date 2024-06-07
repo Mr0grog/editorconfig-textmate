@@ -8,7 +8,7 @@ set -euo pipefail
 # 
 # If you don't set an output path, it will use `./build`.
 
-VERSION='10.40'
+VERSION='10.44'
 PCRE2_DIR=$(cd $(dirname $0) && pwd)
 SOURCE_PATH="${PCRE2_DIR}/pcre2-${VERSION}"
 BUILD_PATH="${1:-"${PCRE2_DIR}/build"}"
