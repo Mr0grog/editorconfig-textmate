@@ -1,10 +1,10 @@
 # Changelog
 
-## (In Development)
+## Version 0.5.4 (2024-06-23)
 
-- Add this changelog as a file. It is available both at the root of the project’s Git repo and in the plugin bundle.
+This upgrades editorconfig-core-c again (to v0.12.9) to fix bug in the previous release.
 
-- Upgrade editorconfig-core-c (it handles the actual reading of `.editorconfig` files) to v0.12.9, which fixes a bug in the previous release. 
+These release notes are now also available inside the plugin bundle (in `Contents/Resources/CHANGELOG.md`) and in the Git repo root for this project.
 
 
 ## Version 0.5.3 (2024-06-14)
