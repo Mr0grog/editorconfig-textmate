@@ -1,5 +1,10 @@
 # Changelog
 
+## (In Development)
+
+TBD!
+
+
 ## Version 0.5.4 (2024-06-23)
 
 This upgrades editorconfig-core-c again (to v0.12.9) to fix bug in the previous release.
