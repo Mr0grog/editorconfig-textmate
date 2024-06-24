@@ -52,6 +52,7 @@
 		CB47C5C315C05BD800E068C7 /* NSWindow+EditorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C215C05BD800E068C7 /* NSWindow+EditorConfig.m */; };
 		CB47C5C715C05DCA00E068C7 /* ECConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB47C5C615C05DCA00E068C7 /* ECConstants.m */; };
 		CB60468716F6D0FE004753CD /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60468616F6D0EC004753CD /* libeditorconfig_static.a */; };
+		CB91F6762C1CCA9C00A647CA /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = CB91F6752C1CCA6200A647CA /* CHANGELOG.md */; };
 		CB993E4F1DDF797500D3050B /* NSObject+ECDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */; };
 		CBACAC6D233A7FED00F3B043 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CBACAC6C233A7FED00F3B043 /* LICENSE */; };
 		CBBD16AD2914C01F0022E52D /* libpcre2-8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBACAC632339B31300F3B043 /* libpcre2-8.a */; };
@@ -118,6 +119,7 @@
 		CB60468116F6CAA2004753CD /* editorconfig_handle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig_handle.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig_handle.h"; sourceTree = SOURCE_ROOT; };
 		CB60468216F6CAA2004753CD /* editorconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig.h"; sourceTree = SOURCE_ROOT; };
 		CB60468616F6D0EC004753CD /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditorconfig_static.a; path = editorconfig/libeditorconfig_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB91F6752C1CCA6200A647CA /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		CB993E4D1DDF797500D3050B /* NSObject+ECDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ECDocument.h"; sourceTree = "<group>"; };
 		CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ECDocument.m"; sourceTree = "<group>"; };
 		CBACAC632339B31300F3B043 /* libpcre2-8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpcre2-8.a"; path = "pcre2/lib/libpcre2-8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 			children = (
 				CBACAC6C233A7FED00F3B043 /* LICENSE */,
 				CB47C5E415C0874C00E068C7 /* README.md */,
+				CB91F6752C1CCA6200A647CA /* CHANGELOG.md */,
 				CB47C5A115C0538800E068C7 /* editorconfig-textmate */,
 				CB47C5AD15C0570C00E068C7 /* lib */,
 				CB47C59A15C0538800E068C7 /* Frameworks */,
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBACAC6D233A7FED00F3B043 /* LICENSE in Resources */,
+				CB91F6762C1CCA9C00A647CA /* CHANGELOG.md in Resources */,
 				CB47C5A615C0538800E068C7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
