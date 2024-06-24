@@ -2,7 +2,9 @@
 
 ## (In Development)
 
-- Add changelog to repo root and to built plugin bundle.
+- Add this changelog as a file. It is available both at the root of the project’s Git repo and in the plugin bundle.
+
+- Upgrade editorconfig-core-c (it handles the actual reading of `.editorconfig` files) to v0.12.9, which fixes a bug in the previous release. 
 
 
 ## Version 0.5.3 (2024-06-14)
