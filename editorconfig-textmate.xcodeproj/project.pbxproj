@@ -350,7 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"$BUILT_PRODUCTS_DIR/editorconfig/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-editorconfig-core\"\ncp \"$BUILT_PRODUCTS_DIR/pcre2/LICENCE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-pcre\"\n";
+			shellScript = "cp \"$BUILT_PRODUCTS_DIR/editorconfig/LICENSE\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-editorconfig-core\"\ncp \"$BUILT_PRODUCTS_DIR/pcre2/LICENCE.md\" \"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Contents/Resources/LICENSE-pcre.md\"\n";
 		};
 		CB60467916F6B558004753CD /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;

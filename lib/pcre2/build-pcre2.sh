@@ -8,7 +8,7 @@ set -euo pipefail
 # 
 # If you don't set an output path, it will use `./build`.
 
-VERSION='10.44'
+VERSION='10.46'
 PCRE2_DIR=$(cd $(dirname $0) && pwd)
 SOURCE_PATH="${PCRE2_DIR}/pcre2-${VERSION}"
 BUILD_PATH="${1:-"${PCRE2_DIR}/build"}"
@@ -36,7 +36,7 @@ CFLAGS='-arch x86_64 -arch arm64 -mmacosx-version-min=11.0' ./configure \
   --prefix "${BUILD_PATH}"
 make
 make install
-cp "${SOURCE_PATH}/LICENCE" "${BUILD_PATH}/LICENCE"
+cp "${SOURCE_PATH}/LICENCE.md" "${BUILD_PATH}/LICENCE.md"
 
 # Verify architectures
 ARCHITECTURES="$(lipo -info "${BUILD_PATH}/lib/libpcre2-8.a")"
