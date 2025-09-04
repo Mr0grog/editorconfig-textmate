@@ -119,6 +119,7 @@
 		CB60468116F6CAA2004753CD /* editorconfig_handle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig_handle.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig_handle.h"; sourceTree = SOURCE_ROOT; };
 		CB60468216F6CAA2004753CD /* editorconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig.h; path = "lib/editorconfig-core/include/editorconfig/editorconfig.h"; sourceTree = SOURCE_ROOT; };
 		CB60468616F6D0EC004753CD /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditorconfig_static.a; path = editorconfig/libeditorconfig_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB8DB8D82C29F59F0015496E /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		CB91F6752C1CCA6200A647CA /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		CB993E4D1DDF797500D3050B /* NSObject+ECDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ECDocument.h"; sourceTree = "<group>"; };
 		CB993E4E1DDF797500D3050B /* NSObject+ECDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ECDocument.m"; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 				CBACAC6C233A7FED00F3B043 /* LICENSE */,
 				CB47C5E415C0874C00E068C7 /* README.md */,
 				CB91F6752C1CCA6200A647CA /* CHANGELOG.md */,
+				CB8DB8D82C29F59F0015496E /* CONTRIBUTING.md */,
 				CB47C5A115C0538800E068C7 /* editorconfig-textmate */,
 				CB47C5AD15C0570C00E068C7 /* lib */,
 				CB47C59A15C0538800E068C7 /* Frameworks */,
