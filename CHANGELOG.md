@@ -1,8 +1,8 @@
 # Changelog
 
-## (In Development)
+## Version 0.5.5 (2025-10-09)
 
-TBD!
+This release includes updates to editorconfig-core-c (to v0.12.10) and pcre2 (to v10.46), which fix some minor bugs.
 
 
 ## Version 0.5.4 (2024-06-23)
