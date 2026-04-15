@@ -1,5 +1,10 @@
 # Changelog
 
+## In Development
+
+TBD
+
+
 ## Version 0.5.6 (2026-04-15)
 
 Upgrade the underlying editorconfig-core-c package to v0.12.11, which fixes a security issue: CVE-2026-40489.
